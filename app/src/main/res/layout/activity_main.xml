@@ -22,6 +22,6 @@
         android:layout_height="wrap_content"
         android:text="123"
         tools:layout_editor_absoluteX="193dp"
-        tools:layout_editor_absoluteY="309dp" />
+        tools:layout_editor_absoluteY="302dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
