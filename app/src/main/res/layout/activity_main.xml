@@ -8,30 +8,35 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1234"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="300dp"
+        android:fontFamily="@font/english_font"
+        android:text="Language Studying"
+        android:textAlignment="center"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="123"
-        tools:layout_editor_absoluteX="193dp"
-        tools:layout_editor_absoluteY="302dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="12345"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        tools:layout_editor_absoluteX="182dp"
-        tools:layout_editor_absoluteY="453dp" />
-
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="125dp"
+        android:background="@drawable/button_style"
+        android:fontFamily="@font/chinese_font"
+        android:text="開始"
+        android:textSize="30sp"
+        app:backgroundTint="#253769"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 </androidx.constraintlayout.widget.ConstraintLayout>

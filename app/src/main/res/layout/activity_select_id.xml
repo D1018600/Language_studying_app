@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectIdActivity">
+
+    <Button
+        android:id="@+id/btn_learn"
+        android:layout_width="245dp"
+        android:layout_height="245dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="85dp"
+        android:background="@drawable/button_style"
+        android:text="學習語言"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        android:fontFamily="@font/chinese_font"
+        app:backgroundTint="#253769"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_design"
+        android:layout_width="255dp"
+        android:layout_height="255dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/button_style"
+        android:text="設計題目"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        android:fontFamily="@font/chinese_font"
+        app:backgroundTint="#253769"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_learn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_learn" />
+</androidx.constraintlayout.widget.ConstraintLayout>
