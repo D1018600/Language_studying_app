@@ -35,8 +35,7 @@ public class SelectIdActivity extends AppCompatActivity {
                 Intent intent = new Intent();
 
                 if (view.getId() == R.id.btn_learn) {
-                    Toast toast = Toast.makeText(SelectIdActivity.this, "Not design yet.", Toast.LENGTH_LONG);
-                    toast.show();
+                    intent.setClass(SelectIdActivity.this, WorldActivity.class);
                 } else if (view.getId() == R.id.btn_design) {
                     intent.setClass(SelectIdActivity.this, DesignStageActivity.class);
                 }
