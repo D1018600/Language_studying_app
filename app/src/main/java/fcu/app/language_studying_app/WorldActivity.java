@@ -1,11 +1,13 @@
 package fcu.app.language_studying_app;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +18,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class WorldActivity extends AppCompatActivity {
 
   private Button btnJoinRoom;
-
+  private ImageView ivEp1;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,16 @@ public class WorldActivity extends AppCompatActivity {
     });
 
     btnJoinRoom = findViewById(R.id.btn_join_room);
+    ivEp1 = findViewById(R.id.iv_ep1);
+
+    ivEp1.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Intent intent = new Intent();
+        intent.setClass(WorldActivity.this, GameStage.class);
+        startActivity(intent);
+      }
+    });
 
     btnJoinRoom.setOnClickListener(new View.OnClickListener() {
       @Override

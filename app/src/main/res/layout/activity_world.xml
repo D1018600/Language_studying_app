@@ -16,7 +16,7 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent">
 
             <TextView
@@ -132,8 +132,8 @@
                 android:id="@+id/tv_ep4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
-                android:layout_marginTop="128dp"
+                android:layout_marginStart="148dp"
+                android:layout_marginTop="152dp"
                 android:fontFamily="@font/english_font"
                 android:text="episode 4"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -169,9 +169,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="128dp"
                 android:layout_marginTop="100dp"
+                android:layout_marginEnd="72dp"
                 android:fontFamily="@font/english_font"
                 android:text="episode 5"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_ep4"
                 app:layout_constraintTop_toTopOf="parent" />
 
