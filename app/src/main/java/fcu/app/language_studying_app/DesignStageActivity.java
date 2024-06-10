@@ -16,7 +16,8 @@ public class DesignStageActivity extends AppCompatActivity {
     private Button btnReturn;
     private EditText etTopic;
     private Button btnAddWord;
-
+    private EditText[] etWords;
+    private int wordCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +33,32 @@ public class DesignStageActivity extends AppCompatActivity {
         btnReturn = findViewById(R.id.btn_return_design_stage);
         etTopic = findViewById(R.id.et_topic);
         btnAddWord = findViewById(R.id.btn_add_word);
+        etWords = new EditText[]{
+                findViewById(R.id.et_2),
+                findViewById(R.id.et_3),
+                findViewById(R.id.et_5),
+                findViewById(R.id.et_1),
+                findViewById(R.id.et_4),
+                findViewById(R.id.et_6)
+        };
+
+        for (EditText editText : etWords) {
+            editText.setVisibility(View.INVISIBLE);
+        }
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(DesignStageActivity.this, DesignRecordActivity.class);
-                DesignStageActivity.this.startActivity(intent);
+                if(view.getId() == R.id.btn_return_design_stage){
+                    intent.setClass(DesignStageActivity.this, DesignRecordActivity.class);
+                    DesignStageActivity.this.startActivity(intent);
+                }
+                if(view.getId() == R.id.btn_add_word){
+                    if(wordCount < etWords.length){
+                        etWords[wordCount].setVisibility(View.VISIBLE);
+                        wordCount++;
+                    }
+                }
             }
         };
         btnReturn.setOnClickListener(listener);
