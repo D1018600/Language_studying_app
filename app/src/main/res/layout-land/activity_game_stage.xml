@@ -20,22 +20,126 @@
 
   <TextView
       android:id="@+id/textView2"
-      android:layout_width="146dp"
-      android:layout_height="34dp"
-      android:layout_marginStart="92dp"
-      android:layout_marginTop="56dp"
-      android:text="TextView"
+      android:layout_width="743dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      android:layout_marginTop="88dp"
+      android:text="中文題目"
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      android:textStyle="bold"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
   <TextView
-      android:id="@+id/textView4"
-      android:layout_width="607dp"
-      android:layout_height="41dp"
-      android:layout_marginTop="112dp"
+      android:id="@+id/tv_ans1"
+      android:layout_width="743dp"
+      android:layout_height="0dp"
+      android:layout_marginTop="16dp"
       android:text="TextView"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.502"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      android:textStyle="bold"
+      app:layout_constraintStart_toStartOf="@+id/textView2"
+      app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+  <TextView
+      android:id="@+id/tv_ch1"
+      android:layout_width="170dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="48dp"
+      android:layout_marginTop="220dp"
+      android:text="AAAAAAAAAAAA"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/tv_ch4"
+      android:layout_width="170dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="576dp"
+      android:text="anser4"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      app:layout_constraintBottom_toBottomOf="@+id/tv_ch3"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tv_ch3"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <TextView
+      android:id="@+id/tv_ch8"
+      android:layout_width="170dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="576dp"
+      android:text="anser8"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      app:layout_constraintBottom_toBottomOf="@+id/tv_ch7"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tv_ch7"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <TextView
+      android:id="@+id/tv_ch6"
+      android:layout_width="170dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="224dp"
+      android:text="anser6"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      app:layout_constraintBottom_toBottomOf="@+id/tv_ch5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tv_ch5"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <TextView
+      android:id="@+id/tv_ch2"
+      android:layout_width="170dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="224dp"
+      android:text="anser2"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      app:layout_constraintBottom_toBottomOf="@+id/tv_ch1"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tv_ch1"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <TextView
+      android:id="@+id/tv_ch3"
+      android:layout_width="170dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="400dp"
+      android:text="anser3"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      app:layout_constraintBottom_toBottomOf="@+id/tv_ch2"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tv_ch2"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <TextView
+      android:id="@+id/tv_ch7"
+      android:layout_width="170dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="400dp"
+      android:text="anser7"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      app:layout_constraintBottom_toBottomOf="@+id/tv_ch6"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tv_ch6"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <TextView
+      android:id="@+id/tv_ch5"
+      android:layout_width="170dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="32dp"
+      android:text="anser5"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      app:layout_constraintStart_toStartOf="@+id/tv_ch1"
+      app:layout_constraintTop_toBottomOf="@+id/tv_ch1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
