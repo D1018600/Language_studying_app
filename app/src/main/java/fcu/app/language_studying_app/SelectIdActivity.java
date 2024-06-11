@@ -37,7 +37,7 @@ public class SelectIdActivity extends AppCompatActivity {
                 if (view.getId() == R.id.btn_learn) {
                     intent.setClass(SelectIdActivity.this, WorldActivity.class);
                 } else if (view.getId() == R.id.btn_design) {
-                    intent.setClass(SelectIdActivity.this, DesignStageActivity.class);
+                    intent.setClass(SelectIdActivity.this, DesignRecordActivity.class);
                 }
 
                 startActivity(intent);

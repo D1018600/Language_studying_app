@@ -24,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="#253769"
         android:fontFamily="@font/chinese_font"
         android:text="新增關卡"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,14 +45,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="stage1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="stage2"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="24sp" />
     </LinearLayout>
 
     <Button
@@ -60,7 +63,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Button"
+        android:backgroundTint="#253769"
+        android:fontFamily="@font/chinese_font"
+        android:text="上一頁"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

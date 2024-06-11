@@ -13,7 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Button"
+        android:backgroundTint="#253769"
+        android:fontFamily="@font/chinese_font"
+        android:text="上一頁"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,71 +37,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
+        android:hint="ex: today is a sunny day"
         android:inputType="text"
-        android:text="Today is a sunny day"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_return_design_stage" />
-
-    <Button
-        android:id="@+id/btn_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="today"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_2"
-        app:layout_constraintEnd_toStartOf="@+id/btn_2"
-        app:layout_constraintTop_toTopOf="@+id/btn_2" />
-
-    <Button
-        android:id="@+id/btn_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="+"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_topic" />
-
-    <Button
-        android:id="@+id/btn_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="+"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_2"
-        app:layout_constraintStart_toEndOf="@+id/btn_2"
-        app:layout_constraintTop_toTopOf="@+id/btn_2" />
-
-    <Button
-        android:id="@+id/btn_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="+"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_5"
-        app:layout_constraintEnd_toStartOf="@+id/btn_5"
-        app:layout_constraintTop_toTopOf="@+id/btn_5" />
-
-    <Button
-        android:id="@+id/btn_5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="+"
-        app:layout_constraintEnd_toEndOf="@+id/btn_2"
-        app:layout_constraintStart_toStartOf="@+id/btn_2"
-        app:layout_constraintTop_toBottomOf="@+id/btn_2" />
-
-    <Button
-        android:id="@+id/btn_6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="+"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_5"
-        app:layout_constraintStart_toEndOf="@+id/btn_5"
-        app:layout_constraintTop_toTopOf="@+id/btn_5" />
 
     <Button
         android:id="@+id/btn_add_level"
@@ -110,5 +52,92 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_publish"
         app:layout_constraintStart_toEndOf="@+id/btn_return_design_stage"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_add_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_5" />
+
+    <EditText
+        android:id="@+id/et_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="enter word"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_topic"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/et_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="enter word"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/et_2"
+        app:layout_constraintStart_toEndOf="@+id/et_2"
+        app:layout_constraintTop_toTopOf="@+id/et_2"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/et_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="enter word"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/et_2"
+        app:layout_constraintStart_toStartOf="@+id/et_2"
+        app:layout_constraintTop_toBottomOf="@+id/et_2"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/et_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="enter word"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/et_2"
+        app:layout_constraintEnd_toStartOf="@+id/et_2"
+        app:layout_constraintTop_toTopOf="@+id/et_2" />
+
+    <EditText
+        android:id="@+id/et_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="enter word"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/et_5"
+        app:layout_constraintEnd_toStartOf="@+id/et_5"
+        app:layout_constraintTop_toTopOf="@+id/et_5"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/et_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="enter word"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/et_5"
+        app:layout_constraintStart_toEndOf="@+id/et_5"
+        app:layout_constraintTop_toTopOf="@+id/et_5"
+        tools:visibility="invisible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

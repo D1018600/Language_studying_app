@@ -1,6 +1,9 @@
 package fcu.app.language_studying_app;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +12,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class DesignRecordActivity extends AppCompatActivity {
+    private Button btnReturn;
+    private Button btnAddStage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +25,23 @@ public class DesignRecordActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        btnReturn = findViewById(R.id.btn_return_design_record);
+        btnAddStage = findViewById(R.id.btn_add_stage);
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                if(view.getId() == R.id.btn_return_design_record){
+                    intent.setClass(DesignRecordActivity.this, SelectIdActivity.class);
+                }
+                if(view.getId() == R.id.btn_add_stage){
+                    intent.setClass(DesignRecordActivity.this, DesignStageActivity.class);
+                }
+                DesignRecordActivity.this.startActivity(intent);
+            }
+        };
+        btnReturn.setOnClickListener(listener);
+        btnAddStage.setOnClickListener(listener);
     }
 }

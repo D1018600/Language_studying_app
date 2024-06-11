@@ -18,7 +18,8 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".DesignRecordActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ResultScreen"
             android:exported="false" />
