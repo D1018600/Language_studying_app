@@ -38,7 +38,7 @@ public class WorldActivity extends AppCompatActivity {
       @Override
       public void onClick(View v) {
         Intent intent = new Intent();
-        intent.setClass(WorldActivity.this, GameStage.class);
+        intent.setClass(WorldActivity.this, WorldToGameLoading.class);
         startActivity(intent);
       }
     });

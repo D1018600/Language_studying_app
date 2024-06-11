@@ -5,6 +5,7 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -17,96 +18,143 @@ import java.util.ArrayList;
 
 public class GameStage extends AppCompatActivity {
 
-    private ArrayList<String> ansSen;
+  private String chQuestion;
+  private String[] enQuestion;
+  private String[] ansSen;
+  private int cnt = 0;
+  private int miss = 0;
 
-    private float dx, dy, initx, inity;
-    private TextView tvCh1;
-    private TextView tvCh2;
-    private TextView tvCh3;
-    private TextView tvCh4;
-    private TextView tvCh5;
-    private TextView tvCh6;
-    private TextView tvCh7;
-    private TextView tvCh8;
-    private TextView tvAns1;
+  private float dx, dy, initx, inity;
 
-    @SuppressLint("ClickableViewAccessibility")
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_game_stage);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+  private TextView tvChQ;
+  private TextView tvCh1;
+  private TextView tvCh2;
+  private TextView tvCh3;
+  private TextView tvCh4;
+  private TextView tvCh5;
+  private TextView tvCh6;
+  private TextView tvCh7;
+  private TextView tvCh8;
+  private TextView tvAns1;
+  private Button btnNext;
 
-        findIDInit();
+  @SuppressLint("ClickableViewAccessibility")
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    EdgeToEdge.enable(this);
+    setContentView(R.layout.activity_game_stage);
+    ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+      Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+      v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+      return insets;
+    });
 
-        moveChoice(tvCh1, tvAns1);
-        moveChoice(tvCh2, tvAns1);
-        moveChoice(tvCh3, tvAns1);
-        moveChoice(tvCh4, tvAns1);
-        moveChoice(tvCh5, tvAns1);
-        moveChoice(tvCh6, tvAns1);
-        moveChoice(tvCh7, tvAns1);
-        moveChoice(tvCh8, tvAns1);
-    }
+    Bundle bundle = this.getIntent().getExtras();
+    chQuestion = bundle.getString("chQuestion");
+    enQuestion = bundle.getString("enQuestion").split(" ");
+    ansSen = bundle.getString("answer").split(" ");
 
-    private void findIDInit() {
-        tvCh1 = findViewById(R.id.tv_ch1);
-        tvCh2 = findViewById(R.id.tv_ch2);
-        tvCh3 = findViewById(R.id.tv_ch3);
-        tvCh4 = findViewById(R.id.tv_ch4);
-        tvCh5 = findViewById(R.id.tv_ch5);
-        tvCh6 = findViewById(R.id.tv_ch6);
-        tvCh7 = findViewById(R.id.tv_ch7);
-        tvCh8 = findViewById(R.id.tv_ch8);
-        tvAns1 = findViewById(R.id.tv_ans1);
-    }
+    findIDInit();
+    stageInit();
 
-    @SuppressLint("ClickableViewAccessibility")
-    private void moveChoice(TextView ch, TextView ans) {
-        ch.setOnTouchListener(new View.OnTouchListener() {
-            @SuppressLint("ClickableViewAccessibility")
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        initx = v.getX();
-                        inity = v.getY();
-                        dx = v.getX() - event.getRawX();
-                        dy = v.getY() - event.getRawY();
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        v.animate()
-                            .x(event.getRawX() + dx)
-                            .y(event.getRawY() + dy)
-                            .setDuration(0)
-                            .start();
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        Rect rect1 = new Rect();
-                        Rect rect2 = new Rect();
-                        v.getHitRect(rect1);
-                        ans.getHitRect(rect2);
-                        boolean isColliding = Rect.intersects(rect1, rect2);
-                        if (isColliding) {
-                            ans.setText(ans.getText().toString() + " " + ch.getText().toString());
-                            ch.setText(" ");
-                            v.setX(initx);
-                            v.setY(inity);
-                        } else {
-                            v.setX(initx);
-                            v.setY(inity);
-                        }
-                        break;
-                    default:
-                        return false;
-                }
-                return true;
+    moveChoice(tvCh1, tvAns1);
+    moveChoice(tvCh2, tvAns1);
+    moveChoice(tvCh3, tvAns1);
+    moveChoice(tvCh4, tvAns1);
+    moveChoice(tvCh5, tvAns1);
+    moveChoice(tvCh6, tvAns1);
+    moveChoice(tvCh7, tvAns1);
+    moveChoice(tvCh8, tvAns1);
+
+    btnNext.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        finish();
+      }
+    });
+
+  }
+
+  private void findIDInit() {
+    tvCh1 = findViewById(R.id.tv_ch1);
+    tvCh2 = findViewById(R.id.tv_ch2);
+    tvCh3 = findViewById(R.id.tv_ch3);
+    tvCh4 = findViewById(R.id.tv_ch4);
+    tvCh5 = findViewById(R.id.tv_ch5);
+    tvCh6 = findViewById(R.id.tv_ch6);
+    tvCh7 = findViewById(R.id.tv_ch7);
+    tvCh8 = findViewById(R.id.tv_ch8);
+    tvAns1 = findViewById(R.id.tv_ans1);
+    tvChQ = findViewById(R.id.tv_ch_q);
+    btnNext = findViewById(R.id.btn_next_stage);
+  }
+
+  private void stageInit() {
+    tvCh1.setText(ansSen[0]);
+    tvCh2.setText(ansSen[1]);
+    tvCh3.setText(ansSen[2]);
+    tvCh4.setText(ansSen[3]);
+    tvCh5.setText(ansSen[4]);
+    tvCh6.setText(ansSen[5]);
+    tvCh7.setText(ansSen[6]);
+    tvCh8.setText(ansSen[7]);
+    tvChQ.setText(chQuestion);
+
+    btnNext.setEnabled(false);
+    btnNext.setAlpha(0);
+  }
+
+  @SuppressLint("ClickableViewAccessibility")
+  private void moveChoice(TextView ch, TextView ans) {
+    ch.setOnTouchListener(new View.OnTouchListener() {
+      @SuppressLint("ClickableViewAccessibility")
+      @Override
+      public boolean onTouch(View v, MotionEvent event) {
+        switch (event.getAction()) {
+          case MotionEvent.ACTION_DOWN:
+            initx = v.getX();
+            inity = v.getY();
+            dx = v.getX() - event.getRawX();
+            dy = v.getY() - event.getRawY();
+            break;
+          case MotionEvent.ACTION_MOVE:
+            v.animate()
+                .x(event.getRawX() + dx)
+                .y(event.getRawY() + dy)
+                .setDuration(0)
+                .start();
+            break;
+          case MotionEvent.ACTION_UP:
+            Rect rect1 = new Rect();
+            Rect rect2 = new Rect();
+            v.getHitRect(rect1);
+            ans.getHitRect(rect2);
+            boolean isColliding = Rect.intersects(rect1, rect2);
+            if (isColliding && ch.getText().toString().equals(enQuestion[cnt])) {
+              ans.setText(ans.getText().toString() + "  " + ch.getText().toString());
+              ch.setText(" ");
+              cnt++;
+
+              v.setX(initx);
+              v.setY(inity);
+
+              if (cnt == enQuestion.length) {
+                btnNext.setEnabled(true);
+                btnNext.setAlpha(1);
+              }
+            } else {
+              miss++;
+
+              v.setX(initx);
+              v.setY(inity);
             }
-        });
-    }
+            break;
+          default:
+            return false;
+        }
+        return true;
+      }
+    });
+  }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D6F1D6"
     tools:context=".GameStage">
 
   <Button
@@ -19,13 +19,16 @@
       app:layout_constraintTop_toTopOf="parent" />
 
   <TextView
-      android:id="@+id/textView2"
+      android:id="@+id/tv_ch_q"
       android:layout_width="743dp"
       android:layout_height="wrap_content"
       android:layout_marginStart="32dp"
       android:layout_marginTop="88dp"
+      android:background="#FFFFFF"
+      android:fontFamily="@font/chinese_font"
       android:text="中文題目"
-      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Display1"
       android:textStyle="bold"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
@@ -33,32 +36,26 @@
   <TextView
       android:id="@+id/tv_ans1"
       android:layout_width="743dp"
-      android:layout_height="0dp"
+      android:layout_height="51dp"
       android:layout_marginTop="16dp"
-      android:text="TextView"
-      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-      android:textStyle="bold"
-      app:layout_constraintStart_toStartOf="@+id/textView2"
-      app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-  <TextView
-      android:id="@+id/tv_ch1"
-      android:layout_width="170dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="48dp"
-      android:layout_marginTop="220dp"
-      android:text="AAAAAAAAAAAA"
+      android:background="#FFFFFF"
+      android:fontFamily="@font/english_font"
+      android:singleLine="false"
       android:textAlignment="center"
-      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      android:textStyle="bold"
+      app:circularflow_radiusInDP="36dp"
+      app:layout_constraintStart_toStartOf="@+id/tv_ch_q"
+      app:layout_constraintTop_toBottomOf="@+id/tv_ch_q" />
 
   <TextView
       android:id="@+id/tv_ch4"
       android:layout_width="170dp"
       android:layout_height="wrap_content"
       android:layout_marginStart="576dp"
-      android:text="anser4"
+      android:background="#00FFFFFF"
+      android:fontFamily="@font/english_font"
+      android:text="answer4"
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Medium"
       app:layout_constraintBottom_toBottomOf="@+id/tv_ch3"
@@ -67,37 +64,27 @@
       app:layout_constraintVertical_bias="0.0" />
 
   <TextView
-      android:id="@+id/tv_ch8"
+      android:id="@+id/tv_ch1"
       android:layout_width="170dp"
       android:layout_height="wrap_content"
-      android:layout_marginStart="576dp"
-      android:text="anser8"
+      android:layout_marginStart="48dp"
+      android:layout_marginTop="252dp"
+      android:background="#00FFFFFF"
+      android:fontFamily="@font/english_font"
+      android:text="answer1"
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-      app:layout_constraintBottom_toBottomOf="@+id/tv_ch7"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/tv_ch7"
-      app:layout_constraintVertical_bias="0.0" />
-
-  <TextView
-      android:id="@+id/tv_ch6"
-      android:layout_width="170dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="224dp"
-      android:text="anser6"
-      android:textAlignment="center"
-      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-      app:layout_constraintBottom_toBottomOf="@+id/tv_ch5"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/tv_ch5"
-      app:layout_constraintVertical_bias="0.0" />
+      app:layout_constraintTop_toTopOf="parent" />
 
   <TextView
       android:id="@+id/tv_ch2"
       android:layout_width="170dp"
       android:layout_height="wrap_content"
       android:layout_marginStart="224dp"
-      android:text="anser2"
+      android:background="#00FFFFFF"
+      android:fontFamily="@font/english_font"
+      android:text="answer2"
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Medium"
       app:layout_constraintBottom_toBottomOf="@+id/tv_ch1"
@@ -106,24 +93,13 @@
       app:layout_constraintVertical_bias="0.0" />
 
   <TextView
-      android:id="@+id/tv_ch3"
-      android:layout_width="170dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="400dp"
-      android:text="anser3"
-      android:textAlignment="center"
-      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-      app:layout_constraintBottom_toBottomOf="@+id/tv_ch2"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/tv_ch2"
-      app:layout_constraintVertical_bias="0.0" />
-
-  <TextView
       android:id="@+id/tv_ch7"
       android:layout_width="170dp"
       android:layout_height="wrap_content"
       android:layout_marginStart="400dp"
-      android:text="anser7"
+      android:background="#00FFFFFF"
+      android:fontFamily="@font/english_font"
+      android:text="answer7"
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Medium"
       app:layout_constraintBottom_toBottomOf="@+id/tv_ch6"
@@ -135,11 +111,69 @@
       android:id="@+id/tv_ch5"
       android:layout_width="170dp"
       android:layout_height="wrap_content"
-      android:layout_marginTop="32dp"
-      android:text="anser5"
+      android:layout_marginTop="24dp"
+      android:background="#00FFFFFF"
+      android:fontFamily="@font/english_font"
+      android:text="answer5"
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Medium"
       app:layout_constraintStart_toStartOf="@+id/tv_ch1"
       app:layout_constraintTop_toBottomOf="@+id/tv_ch1" />
+
+  <TextView
+      android:id="@+id/tv_ch6"
+      android:layout_width="170dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="224dp"
+      android:background="#00FFFFFF"
+      android:fontFamily="@font/english_font"
+      android:text="answer6"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      app:layout_constraintBottom_toBottomOf="@+id/tv_ch5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tv_ch5"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <TextView
+      android:id="@+id/tv_ch3"
+      android:layout_width="170dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="400dp"
+      android:background="#00FFFFFF"
+      android:fontFamily="@font/english_font"
+      android:text="answer3"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      app:layout_constraintBottom_toBottomOf="@+id/tv_ch2"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tv_ch2"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <TextView
+      android:id="@+id/tv_ch8"
+      android:layout_width="170dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="576dp"
+      android:background="#00FFFFFF"
+      android:fontFamily="@font/english_font"
+      android:text="answer8"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      app:circularflow_radiusInDP="5dp"
+      app:layout_constraintBottom_toBottomOf="@+id/tv_ch7"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tv_ch7"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <Button
+      android:id="@+id/btn_next_stage"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="16dp"
+      android:text="next stage"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
