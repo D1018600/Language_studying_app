@@ -27,8 +27,11 @@ public class WorldToGameLoading extends AppCompatActivity {
   private ArrayList<String> answer = new ArrayList<String>();
   private int numOfStage;
   private int curStage = 0;
+  public static int time = 1;
+  public static int miss = 0;
 
   private TextView tvT;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -69,21 +72,30 @@ public class WorldToGameLoading extends AppCompatActivity {
   protected void onResume() {
     super.onResume();
     if (curStage == numOfStage) {
+      Bundle bundle = new Bundle();
+      bundle.putInt("TIME", time);
+      bundle.putInt("MISS", miss);
 
+      Intent intentToResult = new Intent();
+      intentToResult.putExtras(bundle);
+
+      intentToResult.setClass(WorldToGameLoading.this, ResultScreen.class);
+      startActivity(intentToResult);
+
+      finish();
     } else {
       Bundle bundle = new Bundle();
       bundle.putString("chQuestion", chQuestion.get(curStage));
       bundle.putString("enQuestion", enQuestion.get(curStage));
       bundle.putString("answer", answer.get(curStage));
 
-      Intent intent = new Intent();
-      intent.putExtras(bundle);
+      Intent intentToGame = new Intent();
+      intentToGame.putExtras(bundle);
 
-      intent.setClass(WorldToGameLoading.this, GameStage.class);
-      startActivity(intent);
+      intentToGame.setClass(WorldToGameLoading.this, GameStage.class);
+      startActivity(intentToGame);
 
       curStage++;
     }
-
   }
 }
