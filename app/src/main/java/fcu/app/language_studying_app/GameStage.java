@@ -1,8 +1,10 @@
 package fcu.app.language_studying_app;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +24,7 @@ public class GameStage extends AppCompatActivity {
   private String[] enQuestion;
   private String[] ansSen;
   private int cnt = 0;
-  private int miss = 0;
+  private boolean runStop = false;
 
   private float dx, dy, initx, inity;
 
@@ -36,6 +38,7 @@ public class GameStage extends AppCompatActivity {
   private TextView tvCh7;
   private TextView tvCh8;
   private TextView tvAns1;
+  private TextView tvTime;
   private Button btnNext;
 
   @SuppressLint("ClickableViewAccessibility")
@@ -58,6 +61,19 @@ public class GameStage extends AppCompatActivity {
     findIDInit();
     stageInit();
 
+    Handler h = new Handler();
+    Runnable r = new Runnable() {
+      @Override
+      public void run() {
+        if(runStop)
+          return;
+        tvTime.setText(String.format("%d", WorldToGameLoading.time++));
+        h.postDelayed(this, 1000);
+      }
+    };
+
+    h.postDelayed(r, 1000);
+
     moveChoice(tvCh1, tvAns1);
     moveChoice(tvCh2, tvAns1);
     moveChoice(tvCh3, tvAns1);
@@ -73,7 +89,12 @@ public class GameStage extends AppCompatActivity {
         finish();
       }
     });
+  }
 
+  @Override
+  protected void onStop() {
+    super.onStop();
+    runStop = true;
   }
 
   private void findIDInit() {
@@ -87,6 +108,7 @@ public class GameStage extends AppCompatActivity {
     tvCh8 = findViewById(R.id.tv_ch8);
     tvAns1 = findViewById(R.id.tv_ans1);
     tvChQ = findViewById(R.id.tv_ch_q);
+    tvTime = findViewById(R.id.tv_time);
     btnNext = findViewById(R.id.btn_next_stage);
   }
 
@@ -138,13 +160,12 @@ public class GameStage extends AppCompatActivity {
 
               v.setX(initx);
               v.setY(inity);
-
               if (cnt == enQuestion.length) {
                 btnNext.setEnabled(true);
                 btnNext.setAlpha(1);
               }
             } else {
-              miss++;
+              WorldToGameLoading.miss++;
 
               v.setX(initx);
               v.setY(inity);
