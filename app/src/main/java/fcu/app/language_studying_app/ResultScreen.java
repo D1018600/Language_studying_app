@@ -1,6 +1,9 @@
 package fcu.app.language_studying_app;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +23,8 @@ public class ResultScreen extends AppCompatActivity {
   private ImageView ivResScore1;
   private ImageView ivResScore2;
   private ImageView ivResScore3;
+  private Button btnBackToMenu;
+  private Button btnRetry;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +40,32 @@ public class ResultScreen extends AppCompatActivity {
     Bundle bundle = this.getIntent().getExtras();
     resultTime = bundle.getInt("TIME");
     resultMiss = bundle.getInt("MISS");
+    btnBackToMenu = findViewById(R.id.button2);
+    btnRetry = findViewById(R.id.button);
 
     findIDInit();
 
     tvResTime.setText(tvResTime.getText().toString() + ":  " + resultTime);
     tvResMiss.setText(tvResMiss.getText().toString() + ":  " + resultMiss);
+
+    //onClickListener to back to menu and retry
+    View.OnClickListener btnListener = new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        Intent intent = new Intent();
+        //back to menu
+        if (view.getId() == R.id.button2) {
+          intent.setClass(ResultScreen.this, WorldActivity.class);
+        } else if (view.getId() == R.id.button) { //retry
+          //todo
+          //redirect screen back to the played stage
+        }
+        startActivity(intent);
+      }
+    };
+
+    btnBackToMenu.setOnClickListener(btnListener);
+    btnRetry.setOnClickListener(btnListener);
   }
 
   private void findIDInit() {
