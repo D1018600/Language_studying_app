@@ -9,7 +9,7 @@
     tools:context=".GameStage">
 
   <Button
-      android:id="@+id/btnLastPage"
+      android:id="@+id/btn_game_stop"
       android:layout_width="55dp"
       android:layout_height="49dp"
       android:layout_marginStart="16dp"

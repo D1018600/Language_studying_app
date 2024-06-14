@@ -84,7 +84,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_result_time" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_result_restart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="260dp"
@@ -94,14 +94,14 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_result_miss" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_result_return"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:text="返回首頁"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_result_restart"
+        app:layout_constraintStart_toEndOf="@+id/btn_result_restart"
+        app:layout_constraintTop_toTopOf="@+id/btn_result_restart"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
