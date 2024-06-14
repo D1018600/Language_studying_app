@@ -40,8 +40,6 @@ public class ResultScreen extends AppCompatActivity {
     Bundle bundle = this.getIntent().getExtras();
     resultTime = bundle.getInt("TIME");
     resultMiss = bundle.getInt("MISS");
-    btnBackToMenu = findViewById(R.id.button2);
-    btnRetry = findViewById(R.id.button);
 
     findIDInit();
 
@@ -52,15 +50,18 @@ public class ResultScreen extends AppCompatActivity {
     View.OnClickListener btnListener = new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Intent intent = new Intent();
         //back to menu
-        if (view.getId() == R.id.button2) {
-          intent.setClass(ResultScreen.this, WorldActivity.class);
-        } else if (view.getId() == R.id.button) { //retry
+        if (view.getId() == R.id.btn_result_return) {
+          WorldToGameLoading.returnHome = true;
+          startActivity(new Intent().setClass(ResultScreen.this, WorldActivity.class));
+          finish();
+        } else if (view.getId() == R.id.btn_result_restart) { //retry
           //todo
           //redirect screen back to the played stage
+          WorldToGameLoading.restart = true;
+          startActivity(new Intent().setClass(ResultScreen.this, WorldToGameLoading.class));
+          finish();
         }
-        startActivity(intent);
       }
     };
 
@@ -74,5 +75,7 @@ public class ResultScreen extends AppCompatActivity {
     ivResScore1 = findViewById(R.id.iv_result_score1);
     ivResScore2 = findViewById(R.id.iv_result_score2);
     ivResScore3 = findViewById(R.id.iv_result_score3);
+    btnBackToMenu = findViewById(R.id.btn_result_return);
+    btnRetry = findViewById(R.id.btn_result_restart);
   }
 }

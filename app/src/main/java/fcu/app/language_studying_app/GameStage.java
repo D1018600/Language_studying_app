@@ -20,6 +20,9 @@ import java.util.ArrayList;
 
 public class GameStage extends AppCompatActivity {
 
+  private Handler h = new Handler();
+  private Runnable r;
+
   private String chQuestion;
   private String[] enQuestion;
   private String[] ansSen;
@@ -40,6 +43,7 @@ public class GameStage extends AppCompatActivity {
   private TextView tvAns1;
   private TextView tvTime;
   private Button btnNext;
+  private Button btnStop;
 
   @SuppressLint("ClickableViewAccessibility")
   @Override
@@ -61,19 +65,6 @@ public class GameStage extends AppCompatActivity {
     findIDInit();
     stageInit();
 
-    Handler h = new Handler();
-    Runnable r = new Runnable() {
-      @Override
-      public void run() {
-        if(runStop)
-          return;
-        tvTime.setText(String.format("%d", WorldToGameLoading.time++));
-        h.postDelayed(this, 1000);
-      }
-    };
-
-    h.postDelayed(r, 1000);
-
     moveChoice(tvCh1, tvAns1);
     moveChoice(tvCh2, tvAns1);
     moveChoice(tvCh3, tvAns1);
@@ -89,6 +80,35 @@ public class GameStage extends AppCompatActivity {
         finish();
       }
     });
+
+    btnStop.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Intent intent = new Intent();
+        intent.setClass(GameStage.this, PauseScreen.class);
+        startActivity(intent);
+      }
+    });
+  }
+
+  @Override
+  protected void onResume() {
+    super.onResume();
+    if (WorldToGameLoading.restart || WorldToGameLoading.returnHome) {
+      finish();
+    } else {
+      runStop = false;
+      r = new Runnable() {
+        @Override
+        public void run() {
+          if(runStop)
+            return;
+          tvTime.setText(String.format("%d", WorldToGameLoading.time++));
+          h.postDelayed(this, 1000);
+        }
+      };
+      h.postDelayed(r, 1000);
+    }
   }
 
   @Override
@@ -110,6 +130,7 @@ public class GameStage extends AppCompatActivity {
     tvChQ = findViewById(R.id.tv_ch_q);
     tvTime = findViewById(R.id.tv_time);
     btnNext = findViewById(R.id.btn_next_stage);
+    btnStop = findViewById(R.id.btn_game_stop);
   }
 
   private void stageInit() {

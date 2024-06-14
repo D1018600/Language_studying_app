@@ -17,8 +17,15 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class WorldActivity extends AppCompatActivity {
 
+  private String stage;
+  private String[] stages = {"stage1.csv", "stage2.csv", "stage3.csv", "stage4.csv", "stage5.csv"} ;
+
   private Button btnJoinRoom;
   private ImageView ivEp1;
+  private ImageView ivEp2;
+  private ImageView ivEp3;
+  private ImageView ivEp4;
+  private ImageView ivEp5;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -31,17 +38,41 @@ public class WorldActivity extends AppCompatActivity {
       return insets;
     });
 
-    btnJoinRoom = findViewById(R.id.btn_join_room);
-    ivEp1 = findViewById(R.id.iv_ep1);
+    findIDInit();
 
-    ivEp1.setOnClickListener(new View.OnClickListener() {
+    View.OnClickListener stageListener = new View.OnClickListener() {
       @Override
       public void onClick(View v) {
+        if (v.getId() == R.id.iv_ep1) {
+          stage = stages[0];
+        } else if (v.getId() == R.id.iv_ep2) {
+          stage = stages[1];
+        } else if (v.getId() == R.id.iv_ep3) {
+          stage = stages[2];
+        } else if (v.getId() == R.id.iv_ep4) {
+          stage = stages[3];
+        } else if (v.getId() == R.id.iv_ep5) {
+          stage = stages[4];
+        }
+
+        Bundle bundle = new Bundle();
+        bundle.putString("STAGE", stage);
+
         Intent intent = new Intent();
+        intent.putExtras(bundle);
+
         intent.setClass(WorldActivity.this, WorldToGameLoading.class);
         startActivity(intent);
+
+        finish();
       }
-    });
+    };
+
+    ivEp1.setOnClickListener(stageListener);
+    ivEp2.setOnClickListener(stageListener);
+    ivEp3.setOnClickListener(stageListener);
+    ivEp4.setOnClickListener(stageListener);
+    ivEp5.setOnClickListener(stageListener);
 
     btnJoinRoom.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -49,6 +80,15 @@ public class WorldActivity extends AppCompatActivity {
         joinRoom();
       }
     });
+  }
+
+  private void findIDInit() {
+    btnJoinRoom = findViewById(R.id.btn_join_room);
+    ivEp1 = findViewById(R.id.iv_ep1);
+    ivEp2 = findViewById(R.id.iv_ep2);
+    ivEp3 = findViewById(R.id.iv_ep3);
+    ivEp4 = findViewById(R.id.iv_ep4);
+    ivEp5 = findViewById(R.id.iv_ep5);
   }
 
   private void joinRoom() {
