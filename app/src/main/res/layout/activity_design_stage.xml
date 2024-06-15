@@ -14,8 +14,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#253769"
-        android:fontFamily="@font/chinese_font"
+        android:fontFamily="@font/lifun_font"
         android:text="上一頁"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,13 +27,14 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#253769"
-        android:fontFamily="@font/chinese_font"
+        android:fontFamily="@font/lifun_font"
         android:text="發布"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_sentence"
+        android:id="@+id/et_topic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -44,12 +46,25 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_return_design_stage" />
 
     <Button
+        android:id="@+id/btn_add_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lifun_font"
+        android:text="+"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btn_publish"
+        app:layout_constraintStart_toEndOf="@+id/btn_return_design_stage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/btn_add_word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#253769"
-        android:text="add word"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/lifun_font"
+        android:text="+"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_5" />
@@ -64,7 +79,7 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_sentence"
+        app:layout_constraintTop_toBottomOf="@+id/et_topic"
         tools:visibility="visible" />
 
     <EditText
@@ -129,18 +144,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/et_5"
         app:layout_constraintStart_toEndOf="@+id/et_5"
         app:layout_constraintTop_toTopOf="@+id/et_5"
-        tools:visibility="visible" />
-
-    <EditText
-        android:id="@+id/et_stage_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="StageName"
-        android:inputType="text"
-        app:layout_constraintEnd_toStartOf="@+id/btn_publish"
-        app:layout_constraintStart_toEndOf="@+id/btn_return_design_stage"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:visibility="invisible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
