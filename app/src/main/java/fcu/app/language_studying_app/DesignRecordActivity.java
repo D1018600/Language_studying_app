@@ -1,9 +1,11 @@
 package fcu.app.language_studying_app;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -71,6 +73,36 @@ public class DesignRecordActivity extends AppCompatActivity {
         getStages();
         btnReturn.setOnClickListener(listener);
         btnAddStage.setOnClickListener(listener);
+
+        lvStageContainer.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Map<String, String> item = (Map<String, String>) parent.getItemAtPosition(position);
+                String name = item.get("Name");
+                String code = item.get("Code");
+                String sentence = item.get("sentence");
+                String word1 = item.get("word1");
+                String word2 = item.get("word2");
+                String word3 = item.get("word3");
+                String word4 = item.get("word4");
+                String word5 = item.get("word5");
+                String word6 = item.get("word6");
+
+                Intent intent = new Intent(DesignRecordActivity.this, EditStageActivity.class);
+                intent.putExtra("name", name);
+                intent.putExtra("code", code);
+                intent.putExtra("sentence", sentence);
+                intent.putExtra("word1", word1);
+                intent.putExtra("word2", word2);
+                intent.putExtra("word3", word3);
+                intent.putExtra("word4", word4);
+                intent.putExtra("word5", word5);
+                intent.putExtra("word6", word6);
+
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void getStages(){
@@ -86,6 +118,13 @@ public class DesignRecordActivity extends AppCompatActivity {
                     Map<String, String> map = new HashMap<>();
                     map.put("Name", stage.getName());
                     map.put("Code", String.valueOf(stage.getCode()));
+                    map.put("sentence", stage.getSentence());
+                    map.put("word1", stage.getWord1());
+                    map.put("word2", stage.getWord2());
+                    map.put("word3", stage.getWord3());
+                    map.put("word4", stage.getWord4());
+                    map.put("word5", stage.getWord5());
+                    map.put("word6", stage.getWord6());
                     stageList.add(map);
                 }
 

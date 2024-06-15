@@ -27,7 +27,6 @@ public class DesignStageActivity extends AppCompatActivity {
     private Button btnPublish;
     private EditText etName;
     private EditText[] etWords;
-    private int wordCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +51,8 @@ public class DesignStageActivity extends AppCompatActivity {
                 findViewById(R.id.et_5),
                 findViewById(R.id.et_6)
         };
+
+
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
