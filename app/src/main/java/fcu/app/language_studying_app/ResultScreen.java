@@ -41,7 +41,7 @@ public class ResultScreen extends AppCompatActivity {
     SharedPreferences.Editor editor = sp.edit();
     String newScore = sp.getString(MainActivity.STAGE_SCORE, "00000");
 
-    int StageNum = 0;
+    int StageNum = sp.getInt(MainActivity.CURRENT_STAGE, 0);
     Bundle bundle = this.getIntent().getExtras();
     resultTime = bundle.getInt("TIME");
     resultMiss = bundle.getInt("MISS");

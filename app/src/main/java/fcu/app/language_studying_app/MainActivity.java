@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
   private Button btnStart;
   public static final String SHARE_PREF_NAME = "app_pref";
   public static final String STAGE_SCORE = "stage_score";
+  public static final String CURRENT_STAGE = "current_stage";
 
 
   @Override
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     SharedPreferences sp = getSharedPreferences(SHARE_PREF_NAME, MODE_PRIVATE);
     String username = sp.getString(STAGE_SCORE, "00000");
+    int curStage = sp.getInt(CURRENT_STAGE, 0);
 
     ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
       Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

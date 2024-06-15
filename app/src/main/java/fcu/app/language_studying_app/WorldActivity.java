@@ -46,6 +46,7 @@ public class WorldActivity extends AppCompatActivity {
       return insets;
     });
     SharedPreferences sp = getSharedPreferences(MainActivity.SHARE_PREF_NAME, MODE_PRIVATE);
+    SharedPreferences.Editor editor = sp.edit();
     String username = sp.getString(MainActivity.STAGE_SCORE, "00000");
 
     findIDInit();
@@ -59,16 +60,21 @@ public class WorldActivity extends AppCompatActivity {
       public void onClick(View v) {
         if (v.getId() == R.id.iv_ep1) {
           stage = stages[0];
+          editor.putInt(MainActivity.CURRENT_STAGE, 1);
         } else if (v.getId() == R.id.iv_ep2) {
           stage = stages[1];
+          editor.putInt(MainActivity.CURRENT_STAGE, 2);
         } else if (v.getId() == R.id.iv_ep3) {
           stage = stages[2];
+          editor.putInt(MainActivity.CURRENT_STAGE, 3);
         } else if (v.getId() == R.id.iv_ep4) {
           stage = stages[3];
+          editor.putInt(MainActivity.CURRENT_STAGE, 4);
         } else if (v.getId() == R.id.iv_ep5) {
           stage = stages[4];
+          editor.putInt(MainActivity.CURRENT_STAGE, 5);
         }
-
+        editor.commit();
         bundle = new Bundle();
         bundle.putString("STAGE", stage);
 
