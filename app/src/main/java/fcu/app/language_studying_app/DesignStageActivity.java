@@ -19,6 +19,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class DesignStageActivity extends AppCompatActivity {
     private Button btnReturn;
     private EditText etSentence;
@@ -69,7 +71,8 @@ public class DesignStageActivity extends AppCompatActivity {
                     String word4 = etWords[3].getText().toString();
                     String word5 = etWords[4].getText().toString();
                     String word6 = etWords[5].getText().toString();
-                    addStage(name, sentence, word1, word2, word3, word4, word5, word6);
+                    int code = ThreadLocalRandom.current().nextInt(1, 99999);
+                    addStage(code, name, sentence, word1, word2, word3, word4, word5, word6);
                     intent.setClass(DesignStageActivity.this, DesignRecordActivity.class);
                 }
                 DesignStageActivity.this.startActivity(intent);
@@ -79,9 +82,9 @@ public class DesignStageActivity extends AppCompatActivity {
         btnPublish.setOnClickListener(listener);
     }
 
-    private void addStage(String name, String sentence, String word1, String word2, String word3, String word4, String word5, String word6) {
+    private void addStage(int code, String name, String sentence, String word1, String word2, String word3, String word4, String word5, String word6) {
 
-        Stage stage = new Stage(name, sentence, word1, word2, word3, word4, word5, word6);
+        Stage stage = new Stage(code, name, sentence, word1, word2, word3, word4, word5, word6);
         FirebaseDatabase database =FirebaseDatabase.getInstance();
         DatabaseReference reference =database.getReference("stages");
         reference.push().setValue(stage);

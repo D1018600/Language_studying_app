@@ -1,6 +1,7 @@
 package fcu.app.language_studying_app;
 
 public class Stage {
+    private int code;
     private String name;
     private String sentence;
     private String word1;
@@ -9,8 +10,11 @@ public class Stage {
     private String word4;
     private String word5;
     private String word6;
+    public Stage(){
 
-    public Stage(String name, String sentence, String word1, String word2, String word3, String word4, String word5, String word6) {
+    }
+
+    public Stage(int code, String name, String sentence, String word1, String word2, String word3, String word4, String word5, String word6) {
         this.name = name;
         this.sentence = sentence;
         this.word1 = word1;
@@ -19,6 +23,7 @@ public class Stage {
         this.word4 = word4;
         this.word5 = word5;
         this.word6 = word6;
+        this.code = code;
     }
 
     // Getter and Setter methods
@@ -85,4 +90,7 @@ public class Stage {
     public void setWord6(String word6) {
         this.word6 = word6;
     }
+
+    public int getCode(){return code;}
+    public void setCode(){this.code = code;}
 }
