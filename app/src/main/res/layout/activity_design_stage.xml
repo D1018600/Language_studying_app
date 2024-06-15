@@ -50,8 +50,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
+        android:backgroundTint="#253769"
         android:fontFamily="@font/lifun_font"
-        android:text="+"
+        android:text="add word"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +133,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/et_5"
         app:layout_constraintStart_toEndOf="@+id/et_5"
         app:layout_constraintTop_toTopOf="@+id/et_5"
-        tools:visibility="invisible" />
+        tools:visibility="visible" />
 
     <EditText
         android:id="@+id/et_stage_name"
