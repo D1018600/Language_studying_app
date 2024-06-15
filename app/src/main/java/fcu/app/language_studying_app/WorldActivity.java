@@ -2,12 +2,14 @@ package fcu.app.language_studying_app;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +28,12 @@ public class WorldActivity extends AppCompatActivity {
   private ImageView ivEp3;
   private ImageView ivEp4;
   private ImageView ivEp5;
+  private RatingBar rbEp1;
+  private RatingBar rbEp2;
+  private RatingBar rbEp3;
+  private RatingBar rbEp4;
+  private RatingBar rbEp5;
+  private Bundle bundle;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +45,15 @@ public class WorldActivity extends AppCompatActivity {
       v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
       return insets;
     });
+    SharedPreferences sp = getSharedPreferences(MainActivity.SHARE_PREF_NAME, MODE_PRIVATE);
+    String username = sp.getString(MainActivity.STAGE_SCORE, "00000");
 
     findIDInit();
-
+    rbEp1.setRating(username.charAt(0) - '0');
+    rbEp2.setRating(username.charAt(1) - '0');
+    rbEp3.setRating(username.charAt(2) - '0');
+    rbEp4.setRating(username.charAt(3) - '0');
+    rbEp5.setRating(username.charAt(4) - '0');
     View.OnClickListener stageListener = new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -55,7 +69,7 @@ public class WorldActivity extends AppCompatActivity {
           stage = stages[4];
         }
 
-        Bundle bundle = new Bundle();
+        bundle = new Bundle();
         bundle.putString("STAGE", stage);
 
         Intent intent = new Intent();
@@ -89,6 +103,11 @@ public class WorldActivity extends AppCompatActivity {
     ivEp3 = findViewById(R.id.iv_ep3);
     ivEp4 = findViewById(R.id.iv_ep4);
     ivEp5 = findViewById(R.id.iv_ep5);
+    rbEp1 = findViewById(R.id.rb_ep1);
+    rbEp2 = findViewById(R.id.rb_ep2);
+    rbEp3 = findViewById(R.id.rb_ep3);
+    rbEp4 = findViewById(R.id.rb_ep4);
+    rbEp5 = findViewById(R.id.rb_ep5);
   }
 
   private void joinRoom() {

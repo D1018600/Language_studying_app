@@ -1,6 +1,7 @@
 package fcu.app.language_studying_app;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,15 +37,41 @@ public class ResultScreen extends AppCompatActivity {
         v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
         return insets;
     });
+    SharedPreferences sp = getSharedPreferences(MainActivity.SHARE_PREF_NAME, MODE_PRIVATE);
+    SharedPreferences.Editor editor = sp.edit();
+    String newScore = sp.getString(MainActivity.STAGE_SCORE, "00000");
 
+    int StageNum = 0;
     Bundle bundle = this.getIntent().getExtras();
     resultTime = bundle.getInt("TIME");
     resultMiss = bundle.getInt("MISS");
+
 
     findIDInit();
 
     tvResTime.setText(tvResTime.getText().toString() + ":  " + resultTime);
     tvResMiss.setText(tvResMiss.getText().toString() + ":  " + resultMiss);
+
+    if(resultMiss < 12 && resultTime < 200)
+    {
+      ivResScore1.setImageResource(android.R.drawable.btn_star_big_on);
+      newScore = newScore.substring(0, StageNum) + '1' + newScore.substring(StageNum + 1);
+    }
+    if(resultMiss < 7 && resultTime < 150)
+    {
+      ivResScore2.setImageResource(android.R.drawable.btn_star_big_on);
+      newScore = newScore.substring(0, StageNum) + '2' + newScore.substring(StageNum + 1);
+    }
+
+    if(resultMiss < 3 && resultTime < 120)
+    {
+      ivResScore3.setImageResource(android.R.drawable.btn_star_big_on);
+      newScore = newScore.substring(0, StageNum) + '3' + newScore.substring(StageNum + 1);
+    }
+    editor.putString(MainActivity.STAGE_SCORE, newScore);
+    editor.commit();
+
+
 
     //onClickListener to back to menu and retry
     View.OnClickListener btnListener = new View.OnClickListener() {
@@ -56,7 +83,6 @@ public class ResultScreen extends AppCompatActivity {
           startActivity(new Intent().setClass(ResultScreen.this, WorldActivity.class));
           finish();
         } else if (view.getId() == R.id.btn_result_restart) { //retry
-          //todo
           //redirect screen back to the played stage
           WorldToGameLoading.restart = true;
           startActivity(new Intent().setClass(ResultScreen.this, WorldToGameLoading.class));
