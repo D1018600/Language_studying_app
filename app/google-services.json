@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "821992548556",
+    "firebase_url": "https://test-project-1d325-default-rtdb.firebaseio.com",
+    "project_id": "test-project-1d325",
+    "storage_bucket": "test-project-1d325.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821992548556:android:eac6b94f50558065cefa69",
+        "android_client_info": {
+          "package_name": "fcu.app.language_studying_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqFZtIt6qv5dU_s5duKQwgphxerWv3mwY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821992548556:android:24b19aa5ad5e99f3cefa69",
+        "android_client_info": {
+          "package_name": "fcu.hmc.firebasetest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqFZtIt6qv5dU_s5duKQwgphxerWv3mwY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821992548556:android:0342ac631273c34acefa69",
+        "android_client_info": {
+          "package_name": "fcu.hmc.test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqFZtIt6qv5dU_s5duKQwgphxerWv3mwY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
