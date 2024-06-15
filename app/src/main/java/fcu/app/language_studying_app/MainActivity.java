@@ -11,7 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import android.content.SharedPreferences;
-
+import android.widget.ImageView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
   public static final String SHARE_PREF_NAME = "app_pref";
   public static final String STAGE_SCORE = "stage_score";
   public static final String CURRENT_STAGE = "current_stage";
-
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
