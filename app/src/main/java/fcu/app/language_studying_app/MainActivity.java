@@ -27,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     SharedPreferences sp = getSharedPreferences(SHARE_PREF_NAME, MODE_PRIVATE);
-    String username = sp.getString(STAGE_SCORE, "00000");
+    SharedPreferences.Editor editor = sp.edit();
+
+    String score = sp.getString(STAGE_SCORE, "000000");
     int curStage = sp.getInt(CURRENT_STAGE, 0);
 
     ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

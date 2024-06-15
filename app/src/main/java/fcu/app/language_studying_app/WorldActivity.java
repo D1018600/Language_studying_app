@@ -47,14 +47,14 @@ public class WorldActivity extends AppCompatActivity {
     });
     SharedPreferences sp = getSharedPreferences(MainActivity.SHARE_PREF_NAME, MODE_PRIVATE);
     SharedPreferences.Editor editor = sp.edit();
-    String username = sp.getString(MainActivity.STAGE_SCORE, "00000");
+    String score = sp.getString(MainActivity.STAGE_SCORE, "000000");
 
     findIDInit();
-    rbEp1.setRating(username.charAt(0) - '0');
-    rbEp2.setRating(username.charAt(1) - '0');
-    rbEp3.setRating(username.charAt(2) - '0');
-    rbEp4.setRating(username.charAt(3) - '0');
-    rbEp5.setRating(username.charAt(4) - '0');
+    rbEp1.setRating(score.charAt(0) - '0');
+    rbEp2.setRating(score.charAt(1) - '0');
+    rbEp3.setRating(score.charAt(2) - '0');
+    rbEp4.setRating(score.charAt(3) - '0');
+    rbEp5.setRating(score.charAt(4) - '0');
     View.OnClickListener stageListener = new View.OnClickListener() {
       @Override
       public void onClick(View v) {

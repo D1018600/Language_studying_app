@@ -41,7 +41,7 @@ public class ResultScreen extends AppCompatActivity {
     SharedPreferences.Editor editor = sp.edit();
     String newScore = sp.getString(MainActivity.STAGE_SCORE, "00000");
 
-    int StageNum = sp.getInt(MainActivity.CURRENT_STAGE, 0);
+    int StageNum = sp.getInt(MainActivity.CURRENT_STAGE, 1);
     Bundle bundle = this.getIntent().getExtras();
     resultTime = bundle.getInt("TIME");
     resultMiss = bundle.getInt("MISS");
@@ -55,18 +55,18 @@ public class ResultScreen extends AppCompatActivity {
     if(resultMiss < 12 && resultTime < 200)
     {
       ivResScore1.setImageResource(android.R.drawable.btn_star_big_on);
-      newScore = newScore.substring(0, StageNum) + '1' + newScore.substring(StageNum + 1);
+      newScore = newScore.substring(0, StageNum-1) + '1' + newScore.substring(StageNum);
     }
     if(resultMiss < 7 && resultTime < 150)
     {
       ivResScore2.setImageResource(android.R.drawable.btn_star_big_on);
-      newScore = newScore.substring(0, StageNum) + '2' + newScore.substring(StageNum + 1);
+      newScore = newScore.substring(0, StageNum-1) + '2' + newScore.substring(StageNum);
     }
 
     if(resultMiss < 3 && resultTime < 120)
     {
       ivResScore3.setImageResource(android.R.drawable.btn_star_big_on);
-      newScore = newScore.substring(0, StageNum) + '3' + newScore.substring(StageNum + 1);
+      newScore = newScore.substring(0, StageNum-1) + '3' + newScore.substring(StageNum);
     }
     editor.putString(MainActivity.STAGE_SCORE, newScore);
     editor.commit();
