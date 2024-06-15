@@ -78,6 +78,7 @@ public class DesignRecordActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Map<String, String> item = (Map<String, String>) parent.getItemAtPosition(position);
+                String identifier = item.get("ID"); // Get the identifier
                 String name = item.get("Name");
                 String code = item.get("Code");
                 String sentence = item.get("sentence");
@@ -89,6 +90,7 @@ public class DesignRecordActivity extends AppCompatActivity {
                 String word6 = item.get("word6");
 
                 Intent intent = new Intent(DesignRecordActivity.this, EditStageActivity.class);
+                intent.putExtra("id", identifier); // Pass the identifier
                 intent.putExtra("name", name);
                 intent.putExtra("code", code);
                 intent.putExtra("sentence", sentence);
@@ -103,6 +105,7 @@ public class DesignRecordActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
     private void getStages(){
@@ -114,8 +117,11 @@ public class DesignRecordActivity extends AppCompatActivity {
                 List<Map<String, String>> stageList = new ArrayList<>();
 
                 for(DataSnapshot ds : snapshot.getChildren()){
+                    String id = ds.getKey();
                     Stage stage = ds.getValue(Stage.class);
+
                     Map<String, String> map = new HashMap<>();
+                    map.put("ID", id);
                     map.put("Name", stage.getName());
                     map.put("Code", String.valueOf(stage.getCode()));
                     map.put("sentence", stage.getSentence());

@@ -29,7 +29,6 @@ public class EditStageActivity extends AppCompatActivity {
     private EditText etName;
     private EditText etSentence;
     private EditText etWords[];
-    private String code = "1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,28 +54,17 @@ public class EditStageActivity extends AppCompatActivity {
                 findViewById(R.id.et_6_edit_stage)
         };
 
-        Intent intentFetch = getIntent();
-        String name = null;
-        String sentence = null;
+        final Intent intentFetch = getIntent();
+        final String id = intentFetch.getStringExtra("id"); // Declare id as final
+        String name = intentFetch.getStringExtra("name");
+        String sentence = intentFetch.getStringExtra("sentence");
+        String et1 = intentFetch.getStringExtra("word1");
+        String et2 = intentFetch.getStringExtra("word2");
+        String et3 = intentFetch.getStringExtra("word3");
+        String et4 = intentFetch.getStringExtra("word4");
+        String et5 = intentFetch.getStringExtra("word5");
+        String et6 = intentFetch.getStringExtra("word6");
 
-        String et1 = null;
-        String et2 = null;
-        String et3 = null;
-        String et4 = null;
-        String et5 = null;
-        String et6 = null;
-
-        if (intentFetch != null) {
-            name = intentFetch.getStringExtra("name");
-            code = intentFetch.getStringExtra("code");
-            sentence = intentFetch.getStringExtra("sentence");
-            et1 = intentFetch.getStringExtra("word1");
-            et2 = intentFetch.getStringExtra("word2");
-            et3 = intentFetch.getStringExtra("word3");
-            et4 = intentFetch.getStringExtra("word4");
-            et5 = intentFetch.getStringExtra("word5");
-            et6 = intentFetch.getStringExtra("word6");
-        }
         etName.setText(name);
         etSentence.setText(sentence);
         etWords[0].setText(et1);
@@ -111,7 +99,7 @@ public class EditStageActivity extends AppCompatActivity {
                 updates.put("word5", newWord5);
                 updates.put("word6", newWord6);
 
-                reference.child(code).updateChildren(updates)
+                reference.child(id).updateChildren(updates)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -124,10 +112,9 @@ public class EditStageActivity extends AppCompatActivity {
                                 Toast.makeText(EditStageActivity.this, "Failed to update data", Toast.LENGTH_SHORT).show();
                             }
                         });
-
-
             }
         });
-
     }
+
+
 }

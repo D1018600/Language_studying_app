@@ -1,6 +1,7 @@
 package fcu.app.language_studying_app;
 
 public class Stage {
+    private String id;
     private int code;
     private String name;
     private String sentence;
@@ -93,4 +94,6 @@ public class Stage {
 
     public int getCode(){return code;}
     public void setCode(){this.code = code;}
+    public String getId(){return id;}
+    public void setId(){this.code = code;}
 }
