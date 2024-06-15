@@ -39,6 +39,7 @@ public class DesignStageActivity extends AppCompatActivity {
             return insets;
         });
 
+        // set id
         btnReturn = findViewById(R.id.btn_return_design_stage);
         etSentence = findViewById(R.id.et_sentence);
         btnPublish = findViewById(R.id.btn_publish);
@@ -52,8 +53,6 @@ public class DesignStageActivity extends AppCompatActivity {
                 findViewById(R.id.et_6)
         };
 
-
-
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +61,7 @@ public class DesignStageActivity extends AppCompatActivity {
                     intent.setClass(DesignStageActivity.this, DesignRecordActivity.class);
                 }
 
-
+                // get the input content and store to firebase
                 if(view.getId() == R.id.btn_publish){
                     String name = etName.getText().toString();
                     String sentence = etSentence.getText().toString();
@@ -84,7 +83,7 @@ public class DesignStageActivity extends AppCompatActivity {
     }
 
     private void addStage(int code, String name, String sentence, String word1, String word2, String word3, String word4, String word5, String word6) {
-
+        // add content to firebase
         Stage stage = new Stage(code, name, sentence, word1, word2, word3, word4, word5, word6);
         FirebaseDatabase database =FirebaseDatabase.getInstance();
         DatabaseReference reference =database.getReference("stages");

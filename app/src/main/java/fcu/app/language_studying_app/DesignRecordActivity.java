@@ -65,7 +65,6 @@ public class DesignRecordActivity extends AppCompatActivity {
                 }
                 if(view.getId() == R.id.btn_add_stage){
                     intent.setClass(DesignRecordActivity.this, DesignStageActivity.class);
-
                 }
                 DesignRecordActivity.this.startActivity(intent);
             }
@@ -77,6 +76,7 @@ public class DesignRecordActivity extends AppCompatActivity {
         lvStageContainer.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // fetch the content from firebase
                 Map<String, String> item = (Map<String, String>) parent.getItemAtPosition(position);
                 String identifier = item.get("ID"); // Get the identifier
                 String name = item.get("Name");
@@ -89,6 +89,7 @@ public class DesignRecordActivity extends AppCompatActivity {
                 String word5 = item.get("word5");
                 String word6 = item.get("word6");
 
+                // pass the content to EditStageActivity
                 Intent intent = new Intent(DesignRecordActivity.this, EditStageActivity.class);
                 intent.putExtra("id", identifier); // Pass the identifier
                 intent.putExtra("name", name);
@@ -108,6 +109,7 @@ public class DesignRecordActivity extends AppCompatActivity {
 
     }
 
+    // fetch the content from firebase and display in listView
     private void getStages(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference("stages");

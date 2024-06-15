@@ -40,7 +40,7 @@ public class EditStageActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        // set id
         btnReturn = findViewById(R.id.btn_return_edit_stage);
         btnSubmit = findViewById(R.id.btn_submit_edit_stage);
         etName = findViewById(R.id.et_name_edit_stage);
@@ -54,8 +54,9 @@ public class EditStageActivity extends AppCompatActivity {
                 findViewById(R.id.et_6_edit_stage)
         };
 
+        // fetch content from DesignRecordActivity
         final Intent intentFetch = getIntent();
-        final String id = intentFetch.getStringExtra("id"); // Declare id as final
+        final String id = intentFetch.getStringExtra("id");
         String name = intentFetch.getStringExtra("name");
         String sentence = intentFetch.getStringExtra("sentence");
         String et1 = intentFetch.getStringExtra("word1");
@@ -65,6 +66,7 @@ public class EditStageActivity extends AppCompatActivity {
         String et5 = intentFetch.getStringExtra("word5");
         String et6 = intentFetch.getStringExtra("word6");
 
+        // put content on editText
         etName.setText(name);
         etSentence.setText(sentence);
         etWords[0].setText(et1);
@@ -74,12 +76,14 @@ public class EditStageActivity extends AppCompatActivity {
         etWords[4].setText(et5);
         etWords[5].setText(et6);
 
+        // submit
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference reference = database.getReference("stages");
 
+                // store the edited content
                 String newName = etName.getText().toString();
                 String newSentence = etSentence.getText().toString();
                 String newWord1 = etWords[0].getText().toString();
@@ -99,6 +103,7 @@ public class EditStageActivity extends AppCompatActivity {
                 updates.put("word5", newWord5);
                 updates.put("word6", newWord6);
 
+                // push updated content
                 reference.child(id).updateChildren(updates)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -112,6 +117,15 @@ public class EditStageActivity extends AppCompatActivity {
                                 Toast.makeText(EditStageActivity.this, "Failed to update data", Toast.LENGTH_SHORT).show();
                             }
                         });
+                Intent intent = new Intent(EditStageActivity.this, DesignRecordActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EditStageActivity.this, DesignRecordActivity.class);
+                startActivity(intent);
             }
         });
     }
