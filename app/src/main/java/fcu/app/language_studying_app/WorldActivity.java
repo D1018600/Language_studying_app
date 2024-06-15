@@ -23,6 +23,7 @@ public class WorldActivity extends AppCompatActivity {
   private String[] stages = {"stage1.csv", "stage2.csv", "stage3.csv", "stage4.csv", "stage5.csv"} ;
 
   private Button btnJoinRoom;
+  private Button btnBack;
   private ImageView ivEp1;
   private ImageView ivEp2;
   private ImageView ivEp3;
@@ -94,6 +95,19 @@ public class WorldActivity extends AppCompatActivity {
     ivEp4.setOnClickListener(stageListener);
     ivEp5.setOnClickListener(stageListener);
 
+    View.OnClickListener backListener = new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        if (v.getId() == R.id.btn_back) {
+          Intent intent = new Intent();
+          intent.setClass(WorldActivity.this, SelectIdActivity.class);
+          startActivity(intent);
+        }
+      }
+    };
+    btnBack.setOnClickListener(backListener);
+
+
     btnJoinRoom.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -104,6 +118,7 @@ public class WorldActivity extends AppCompatActivity {
 
   private void findIDInit() {
     btnJoinRoom = findViewById(R.id.btn_join_room);
+    btnBack = findViewById(R.id.btn_back);
     ivEp1 = findViewById(R.id.iv_ep1);
     ivEp2 = findViewById(R.id.iv_ep2);
     ivEp3 = findViewById(R.id.iv_ep3);
@@ -139,6 +154,7 @@ public class WorldActivity extends AppCompatActivity {
         // or not
       }
     });
+
 
     btnCancel.setOnClickListener(new View.OnClickListener() {
       @Override

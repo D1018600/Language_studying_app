@@ -6,6 +6,7 @@ import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +35,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class DesignRecordActivity extends AppCompatActivity {
     private Button btnReturn;
     private Button btnAddStage;
-    private LinearLayout lvStageContainer;
+    private ListView lvStageContainer;
 
 
 
