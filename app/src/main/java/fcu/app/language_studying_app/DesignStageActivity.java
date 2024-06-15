@@ -22,7 +22,6 @@ import androidx.core.view.WindowInsetsCompat;
 public class DesignStageActivity extends AppCompatActivity {
     private Button btnReturn;
     private EditText etSentence;
-    private Button btnAddWord;
     private Button btnPublish;
     private EditText etName;
     private EditText[] etWords;
@@ -41,21 +40,17 @@ public class DesignStageActivity extends AppCompatActivity {
 
         btnReturn = findViewById(R.id.btn_return_design_stage);
         etSentence = findViewById(R.id.et_sentence);
-        btnAddWord = findViewById(R.id.btn_add_word);
         btnPublish = findViewById(R.id.btn_publish);
         etName = findViewById(R.id.et_stage_name);
         etWords = new EditText[]{
+                findViewById(R.id.et_1),
                 findViewById(R.id.et_2),
                 findViewById(R.id.et_3),
-                findViewById(R.id.et_5),
-                findViewById(R.id.et_1),
                 findViewById(R.id.et_4),
+                findViewById(R.id.et_5),
                 findViewById(R.id.et_6)
         };
 
-        for (EditText editText : etWords) {
-            editText.setVisibility(View.INVISIBLE);
-        }
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,12 +58,8 @@ public class DesignStageActivity extends AppCompatActivity {
                 if(view.getId() == R.id.btn_return_design_stage){
                     intent.setClass(DesignStageActivity.this, DesignRecordActivity.class);
                 }
-                if(view.getId() == R.id.btn_add_word){
-                    if(wordCount < etWords.length){
-                        etWords[wordCount].setVisibility(View.VISIBLE);
-                        wordCount++;
-                    }
-                }
+
+
                 if(view.getId() == R.id.btn_publish){
                     String name = etName.getText().toString();
                     String sentence = etSentence.getText().toString();
@@ -85,7 +76,6 @@ public class DesignStageActivity extends AppCompatActivity {
             }
         };
         btnReturn.setOnClickListener(listener);
-        btnAddWord.setOnClickListener(listener);
         btnPublish.setOnClickListener(listener);
     }
 
