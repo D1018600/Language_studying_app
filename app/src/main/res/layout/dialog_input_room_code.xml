@@ -12,9 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:fontFamily="@font/english_font"
-        android:text="room code"
+        android:fontFamily="@font/lifun_font"
+        android:text="Stage code"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +27,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/edittext_style"
         android:ems="10"
-        android:fontFamily="@font/english_font"
+        android:fontFamily="@font/lifun_font"
         android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/tv_join_room_title"
@@ -49,11 +50,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#4CAF50"
-            android:fontFamily="@font/english_font"
-            android:text="cancel"
+            android:backgroundTint="#F44336"
+            android:fontFamily="@font/lifun_font"
+            android:text="Cancel"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView3"
@@ -66,10 +68,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#F44336"
-            android:fontFamily="@font/english_font"
-            android:text="join"
+            android:backgroundTint="#4CAF50"
+            android:fontFamily="@font/lifun_font"
+            android:text="Join"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textStyle="bold" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

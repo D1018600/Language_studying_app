@@ -25,9 +25,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="72dp"
                 android:layout_marginTop="64dp"
-                android:fontFamily="@font/english_font"
-                android:text="episode 1"
+                android:fontFamily="@font/lifun_font"
+                android:text="Episode 1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,9 +65,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="128dp"
                 android:layout_marginTop="160dp"
-                android:fontFamily="@font/english_font"
-                android:text="episode 2"
+                android:fontFamily="@font/lifun_font"
+                android:text="Episode 2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/tv_ep1"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -99,9 +101,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="128dp"
                 android:layout_marginTop="84dp"
-                android:fontFamily="@font/english_font"
-                android:text="episode 3"
+                android:fontFamily="@font/lifun_font"
+                android:text="Episode 3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/tv_ep2"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -134,9 +137,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="148dp"
                 android:layout_marginTop="152dp"
-                android:fontFamily="@font/english_font"
-                android:text="episode 4"
+                android:fontFamily="@font/lifun_font"
+                android:text="Episode 4"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/tv_ep3"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -170,9 +174,10 @@
                 android:layout_marginStart="128dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginEnd="72dp"
-                android:fontFamily="@font/english_font"
-                android:text="episode 5"
+                android:fontFamily="@font/lifun_font"
+                android:text="Episode 5"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_ep4"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -210,9 +215,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#253769"
-        android:fontFamily="@font/english_font"
-        android:text="join room"
+        android:fontFamily="@font/lifun_font"
+        android:text="Join stage"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

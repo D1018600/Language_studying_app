@@ -14,8 +14,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#253769"
-        android:fontFamily="@font/chinese_font"
+        android:fontFamily="@font/lifun_font"
         android:text="上一頁"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,8 +27,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#253769"
-        android:fontFamily="@font/chinese_font"
+        android:fontFamily="@font/lifun_font"
         android:text="發布"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +50,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/lifun_font"
         android:text="+"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/btn_publish"
         app:layout_constraintStart_toEndOf="@+id/btn_return_design_stage"
         app:layout_constraintTop_toTopOf="parent" />
@@ -58,7 +62,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
+        android:fontFamily="@font/lifun_font"
         android:text="+"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_5" />
