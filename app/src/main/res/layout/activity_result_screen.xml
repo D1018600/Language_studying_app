@@ -66,6 +66,7 @@
         android:fontFamily="@font/lifun_font"
         android:text="times"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_result_miss"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/tv_result_miss" />
@@ -77,6 +78,7 @@
         android:fontFamily="@font/lifun_font"
         android:text="second"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_result_time"
         app:layout_constraintStart_toEndOf="@+id/tv_result_time"
         app:layout_constraintTop_toTopOf="@+id/tv_result_time"

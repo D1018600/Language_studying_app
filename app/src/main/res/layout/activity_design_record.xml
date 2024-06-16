@@ -48,7 +48,7 @@
         android:text="Create new stage"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:backgroundTint="#253769"
+        app:backgroundTint="#03A9F4"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
