@@ -7,11 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,12 +42,12 @@ public class DesignStageActivity extends AppCompatActivity {
         btnPublish = findViewById(R.id.btn_publish);
         etName = findViewById(R.id.et_stage_name);
         etWords = new EditText[]{
-                findViewById(R.id.et_1),
-                findViewById(R.id.et_2),
-                findViewById(R.id.et_3),
-                findViewById(R.id.et_4),
-                findViewById(R.id.et_5),
-                findViewById(R.id.et_6)
+                findViewById(R.id.et_word1),
+                findViewById(R.id.et_word2),
+                findViewById(R.id.et_word3),
+                findViewById(R.id.et_word4),
+                findViewById(R.id.et_word5),
+                findViewById(R.id.et_word6)
         };
 
         View.OnClickListener listener = new View.OnClickListener() {
