@@ -8,14 +8,21 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Arrays;
 
 public class WorldActivity extends AppCompatActivity {
 
@@ -35,6 +42,7 @@ public class WorldActivity extends AppCompatActivity {
   private RatingBar rbEp4;
   private RatingBar rbEp5;
   private Bundle bundle;
+  private EditText etRoomCode;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -129,6 +137,7 @@ public class WorldActivity extends AppCompatActivity {
     rbEp3 = findViewById(R.id.rb_ep3);
     rbEp4 = findViewById(R.id.rb_ep4);
     rbEp5 = findViewById(R.id.rb_ep5);
+    etRoomCode = findViewById(R.id.et_room_code);
   }
 
   private void joinRoom() {
@@ -150,6 +159,18 @@ public class WorldActivity extends AppCompatActivity {
     btnJoin.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
+        if(v.getId() == R.id.btn_join) {
+          FirebaseDatabase database = FirebaseDatabase.getInstance();
+          DatabaseReference ref = database.getReference("stages");
+
+          if(etRoomCode.getText().toString() == Arrays.stream(stages).findAny().toString()) {
+            Intent intent = new Intent();
+            intent.setClass(WorldActivity.this, GameStage.class);
+            startActivity(intent);
+          } else {
+            Toast.makeText(WorldActivity.this, "Wrong code, please retry again.", Toast.LENGTH_SHORT).show();
+          }
+        }
         // correct room code
         // or not
       }
