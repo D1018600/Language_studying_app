@@ -41,7 +41,7 @@ import java.util.Map;
 public class WorldActivity extends AppCompatActivity {
 
   private String stage;
-  private String[] stages = {"stage1.csv", "stage2.csv", "stage3.csv", "stage4.csv", "stage5.csv"} ;
+  private String[] stages = {"stage1.csv", "stage2.csv", "stage3.csv", "stage4.csv", "stage5.csv"};
 
   private Button btnJoinRoom;
   private Button btnBack;
@@ -102,6 +102,7 @@ public class WorldActivity extends AppCompatActivity {
         }
         editor.commit();
         bundle = new Bundle();
+        bundle.putInt("MODE", 0);
         bundle.putString("STAGE", stage);
 
         Intent intent = new Intent();
@@ -174,6 +175,13 @@ public class WorldActivity extends AppCompatActivity {
     Button btnCancel = view.findViewById(R.id.btn_cancel);
     EditText etRoomCode = view.findViewById(R.id.et_room_code);
 
+    btnCancel.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        dialog.dismiss();
+      }
+    });
+
     btnJoin.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -209,6 +217,7 @@ public class WorldActivity extends AppCompatActivity {
                     String csvString = "1" + "q1," + sentence + "," + chinese + "a1," + stringBuilder;
 
                     Bundle bundle = new Bundle();
+                    bundle.putInt("MODE", 1);
                     bundle.putString("chQuestion", stage.getChinese());
                     bundle.putString("enQuestion", stage.getSentence());
                     bundle.putString("answer", stringBuilder);
@@ -216,7 +225,7 @@ public class WorldActivity extends AppCompatActivity {
                     Intent intentToGame = new Intent();
                     intentToGame.putExtras(bundle);
 
-                    intentToGame.setClass(WorldActivity.this, GameStage.class);
+                    intentToGame.setClass(WorldActivity.this, WorldToGameLoading.class);
                     startActivity(intentToGame);
                   }
                 }

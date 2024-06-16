@@ -24,6 +24,8 @@ import java.util.Map;
 public class WorldToGameLoading extends AppCompatActivity {
 
   private String stage;
+  private int mode = 0;
+
   private ArrayList<String> chQuestion = new ArrayList<String>();
   private ArrayList<String> enQuestion = new ArrayList<String>();
   private ArrayList<String> answer = new ArrayList<String>();
@@ -50,30 +52,35 @@ public class WorldToGameLoading extends AppCompatActivity {
     });
 
     Bundle bundle = this.getIntent().getExtras();
-    stage = bundle.getString("STAGE");
+    mode = bundle.getInt("MODE");
 
-    tvT = findViewById(R.id.tv_test);
+    if (mode == 0) {
+      stage = bundle.getString("STAGE");
 
-    try {
-      CSVReader reader = new CSVReader(new InputStreamReader(this.getAssets().open(stage)));
-      int i = 0;
-      String[] line = reader.readNext();
-      numOfStage = Integer.parseInt(line[0]);
+      try {
+        CSVReader reader = new CSVReader(new InputStreamReader(this.getAssets().open(stage)));
+        int i = 0;
+        String[] line = reader.readNext();
+        numOfStage = Integer.parseInt(line[0]);
 
-      while ((line = reader.readNext()) != null) {
-        if (line[0].contains("q")) {
-          enQuestion.add(line[1]);
-          chQuestion.add(line[2]);
-        } else if (line[0].contains("a")) {
-          answer.add(line[1]);
+        while ((line = reader.readNext()) != null) {
+          if (line[0].contains("q")) {
+            enQuestion.add(line[1]);
+            chQuestion.add(line[2]);
+          } else if (line[0].contains("a")) {
+            answer.add(line[1]);
+          }
+          i++;
         }
-        i++;
+      } catch (IOException e) {
+        e.printStackTrace();
       }
-    } catch (IOException e) {
-      e.printStackTrace();
+    } else if (mode == 1) {
+      numOfStage = 1;
+      chQuestion.add(bundle.getString("chQuestion"));
+      enQuestion.add(bundle.getString("enQuestion"));
+      answer.add(bundle.getString("answer"));
     }
-
-    tvT.setText(enQuestion.get(0));
   }
 
   @Override
