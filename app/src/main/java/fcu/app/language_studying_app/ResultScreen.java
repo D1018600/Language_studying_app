@@ -15,10 +15,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class ResultScreen extends AppCompatActivity {
-
   private int resultTime;
   private int resultMiss;
-
   private TextView tvResTime;
   private TextView tvResMiss;
   private ImageView ivResScore1;
