@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -27,7 +28,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class WorldActivity extends AppCompatActivity {
 
@@ -48,6 +53,9 @@ public class WorldActivity extends AppCompatActivity {
   private RatingBar rbEp5;
   private Bundle bundle;
   private EditText etRoomCode;
+  private String chQuestion;
+  private String enQuestion;
+  private String answer;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -160,27 +168,51 @@ public class WorldActivity extends AppCompatActivity {
 
     Button btnJoin = view.findViewById(R.id.btn_join);
     Button btnCancel = view.findViewById(R.id.btn_cancel);
+    EditText etRoomCode = view.findViewById(R.id.et_room_code);
 
     btnJoin.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         if(v.getId() == R.id.btn_join) {
-          FirebaseDatabase database = FirebaseDatabase.getInstance();
-          DatabaseReference ref = database.getReference("stages");
-
           String inputCode = etRoomCode.getText().toString();
-          Query checkDataBase = ref.orderByChild("code").equalTo(inputCode);
-          checkDataBase.addListenerForSingleValueEvent(new ValueEventListener() {
+          if (TextUtils.isEmpty(inputCode)) {
+            Toast.makeText(WorldActivity.this, "enter a room code", Toast.LENGTH_SHORT).show();
+            return;
+          }
+          FirebaseDatabase database = FirebaseDatabase.getInstance();
+          DatabaseReference reference = database.getReference("stages");
+          Query query = reference.orderByChild("code").equalTo(Integer.parseInt(inputCode));
+          query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-              if(snapshot.exists()){
-                Toast.makeText(WorldActivity.this, "get code success", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent();
-                intent.setClass(WorldActivity.this, GameStage.class);
-                startActivity(intent);
+              if (snapshot.exists()) {
+                for (DataSnapshot ds : snapshot.getChildren()) {
+                  Stage stage = ds.getValue(Stage.class);
+                  // get data from firebase
+                  if (stage != null) {
+                    String stringBuilder = stage.getWord1() + " " +
+                            stage.getWord2() + " " +
+                            stage.getWord3() + " " +
+                            stage.getWord4() + " " +
+                            stage.getWord5() + " " +
+                            stage.getWord6() + " " +
+                            stage.getWord7() + " " +
+                            stage.getWord8();
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("chQuestion", stage.getChinese());
+                    bundle.putString("enQuestion", stage.getSentence());
+                    bundle.putString("answer", stringBuilder);
+
+                    Intent intentToGame = new Intent();
+                    intentToGame.putExtras(bundle);
+
+                    intentToGame.setClass(WorldActivity.this, GameStage.class);
+                    startActivity(intentToGame);
+                  }
+                }
               }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
               Toast.makeText(WorldActivity.this, "Wrong code, please retry again.", Toast.LENGTH_SHORT).show();
@@ -190,14 +222,6 @@ public class WorldActivity extends AppCompatActivity {
         }
         // correct room code
         // or not
-      }
-    });
-
-
-    btnCancel.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        dialog.dismiss();
       }
     });
 
