@@ -24,10 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#253769"
         android:fontFamily="@font/lifun_font"
         android:text="Back"
         android:textStyle="bold"
+        app:backgroundTint="#253769"
+        app:cornerRadius="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,10 +38,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="#253769"
         android:fontFamily="@font/lifun_font"
         android:text="Publish"
         android:textStyle="bold"
+        app:backgroundTint="#253769"
+        app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,13 +50,13 @@
         android:id="@+id/et_sentence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="ex: today is a sunny day"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_return_design_stage" />
+        app:layout_constraintEnd_toEndOf="@+id/et_stage_name"
+        app:layout_constraintStart_toStartOf="@+id/et_stage_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_stage_name" />
 
     <EditText
         android:id="@+id/et_2"

@@ -23,6 +23,8 @@
       android:fontFamily="@font/lifun_font"
       android:text="Back"
       android:textStyle="bold"
+      app:backgroundTint="#253769"
+      app:cornerRadius="0dp"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
@@ -191,6 +193,8 @@
       android:fontFamily="@font/lifun_font"
       android:text="Next stage"
       android:textStyle="bold"
+      app:backgroundTint="#253769"
+      app:cornerRadius="0dp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
