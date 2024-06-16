@@ -18,14 +18,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_return_edit_stage"
+        app:layout_constraintEnd_toEndOf="@+id/btn_return_edit_stage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_return_edit_stage"
+        app:layout_constraintTop_toTopOf="@+id/btn_return_edit_stage"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_back" />
+
     <Button
         android:id="@+id/btn_return_edit_stage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:background="#00FFFFFF"
         android:fontFamily="@font/lifun_font"
-        android:text="Back"
         android:textStyle="bold"
         app:backgroundTint="#253769"
         app:cornerRadius="0dp"
@@ -41,7 +53,11 @@
         android:fontFamily="@font/lifun_font"
         android:text="Confirm"
         android:textStyle="bold"
-        app:backgroundTint="#253769"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3.0"
+        app:backgroundTint="#03A9F4"
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

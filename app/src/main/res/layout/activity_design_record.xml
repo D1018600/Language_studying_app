@@ -12,6 +12,19 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:background="@drawable/background"/>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_return_design_record"
+        app:layout_constraintEnd_toEndOf="@+id/btn_return_design_record"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_return_design_record"
+        app:layout_constraintTop_toTopOf="@+id/btn_return_design_record"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_back" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -22,6 +35,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="48sp"
         android:textStyle="bold"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3.0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +52,11 @@
         android:text="Create new stage"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:backgroundTint="#253769"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3.0"
+        app:backgroundTint="#03A9F4"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,12 +64,12 @@
 
     <Button
         android:id="@+id/btn_return_design_record"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:background="#00FFFFFF"
         android:fontFamily="@font/lifun_font"
-        android:text="Back"
         android:textStyle="bold"
         app:backgroundTint="#253769"
         app:cornerRadius="0dp"
@@ -61,6 +82,10 @@
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3.0"
         app:layout_constraintBottom_toTopOf="@+id/btn_add_stage"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"

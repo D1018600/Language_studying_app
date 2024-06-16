@@ -56,6 +56,10 @@
         android:textAlignment="textStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textStyle="bold"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,6 +70,7 @@
         android:fontFamily="@font/lifun_font"
         android:text="times"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_result_miss"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/tv_result_miss" />
@@ -77,6 +82,8 @@
         android:fontFamily="@font/lifun_font"
         android:text="second"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/tv_result_time"
         app:layout_constraintStart_toEndOf="@+id/tv_result_time"
         app:layout_constraintTop_toTopOf="@+id/tv_result_time"
@@ -91,6 +98,10 @@
         android:text="MISS"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textStyle="bold"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3.0"
         app:layout_constraintStart_toStartOf="@+id/tv_result_time"
         app:layout_constraintTop_toBottomOf="@+id/tv_result_time" />
 
