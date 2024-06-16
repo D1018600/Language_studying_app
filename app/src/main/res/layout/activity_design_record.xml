@@ -31,11 +31,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
-        android:backgroundTint="#253769"
         android:fontFamily="@font/lifun_font"
         android:text="Create new stage"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:backgroundTint="#253769"
+        app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -46,10 +47,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#253769"
         android:fontFamily="@font/lifun_font"
-        android:text="上一頁"
+        android:text="Back"
         android:textStyle="bold"
+        app:backgroundTint="#253769"
+        app:cornerRadius="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

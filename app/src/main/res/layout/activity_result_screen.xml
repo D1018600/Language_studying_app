@@ -66,6 +66,7 @@
         android:fontFamily="@font/lifun_font"
         android:text="times"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_result_miss"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/tv_result_miss" />
@@ -77,6 +78,7 @@
         android:fontFamily="@font/lifun_font"
         android:text="second"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_result_time"
         app:layout_constraintStart_toEndOf="@+id/tv_result_time"
         app:layout_constraintTop_toTopOf="@+id/tv_result_time"
@@ -103,6 +105,8 @@
         android:fontFamily="@font/lifun_font"
         android:text="Restart"
         android:textStyle="bold"
+        app:backgroundTint="#253769"
+        app:cornerRadius="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_result_miss" />
 
@@ -114,6 +118,8 @@
         android:fontFamily="@font/lifun_font"
         android:text="Homepage"
         android:textStyle="bold"
+        app:backgroundTint="#253769"
+        app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_result_restart"
         app:layout_constraintStart_toEndOf="@+id/btn_result_restart"
         app:layout_constraintTop_toTopOf="@+id/btn_result_restart"
