@@ -24,12 +24,13 @@
         android:id="@+id/et_word6"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="enter word"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/et_word5"
+        app:layout_constraintStart_toEndOf="@+id/et_word5"
         app:layout_constraintTop_toTopOf="@+id/et_word5"
-        tools:layout_editor_absoluteX="194dp"
         tools:visibility="visible" />
 
     <EditText
@@ -37,10 +38,12 @@
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="enter word"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/et_word7"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/et_word7"
         app:layout_constraintTop_toTopOf="@+id/et_word7"
         tools:visibility="visible" />
@@ -131,10 +134,12 @@
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="enter word"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/et_word3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/et_word3"
         app:layout_constraintTop_toTopOf="@+id/et_word3"
         tools:visibility="visible" />
@@ -144,12 +149,12 @@
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="enter word"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/et_sentence" />
 
     <EditText
         android:id="@+id/et_stage_name"

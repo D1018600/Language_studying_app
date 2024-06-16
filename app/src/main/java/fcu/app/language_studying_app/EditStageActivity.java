@@ -28,6 +28,7 @@ public class EditStageActivity extends AppCompatActivity {
     private Button btnSubmit;
     private EditText etName;
     private EditText etSentence;
+    private EditText etChinese;
     private EditText etWords[];
 
     @Override
@@ -45,13 +46,16 @@ public class EditStageActivity extends AppCompatActivity {
         btnSubmit = findViewById(R.id.btn_submit_edit_stage);
         etName = findViewById(R.id.et_name_edit_stage);
         etSentence = findViewById(R.id.et_sentence_edit_stage);
+        etChinese = findViewById(R.id.et_chinese_edit);
         etWords = new EditText[]{
                 findViewById(R.id.et_1_edit_stage),
                 findViewById(R.id.et_2_edit_stage),
                 findViewById(R.id.et_3_edit_stage),
                 findViewById(R.id.et_4_edit_stage),
                 findViewById(R.id.et_5_edit_stage),
-                findViewById(R.id.et_6_edit_stage)
+                findViewById(R.id.et_6_edit_stage),
+                findViewById(R.id.et_7_edit_stage),
+                findViewById(R.id.et_8_edit_stage)
         };
 
         // fetch content from DesignRecordActivity
@@ -59,22 +63,30 @@ public class EditStageActivity extends AppCompatActivity {
         final String id = intentFetch.getStringExtra("id");
         String name = intentFetch.getStringExtra("name");
         String sentence = intentFetch.getStringExtra("sentence");
+        String chinese = intentFetch.getStringExtra("chinese");
         String et1 = intentFetch.getStringExtra("word1");
         String et2 = intentFetch.getStringExtra("word2");
         String et3 = intentFetch.getStringExtra("word3");
         String et4 = intentFetch.getStringExtra("word4");
         String et5 = intentFetch.getStringExtra("word5");
         String et6 = intentFetch.getStringExtra("word6");
+        String et7 = intentFetch.getStringExtra("word7");
+        String et8 = intentFetch.getStringExtra("word8");
+
 
         // put content on editText
         etName.setText(name);
         etSentence.setText(sentence);
+        etChinese.setText(chinese);
         etWords[0].setText(et1);
         etWords[1].setText(et2);
         etWords[2].setText(et3);
         etWords[3].setText(et4);
         etWords[4].setText(et5);
         etWords[5].setText(et6);
+        etWords[6].setText(et7);
+        etWords[7].setText(et8);
+
 
         // submit
         btnSubmit.setOnClickListener(new View.OnClickListener() {
@@ -86,22 +98,29 @@ public class EditStageActivity extends AppCompatActivity {
                 // store the edited content
                 String newName = etName.getText().toString();
                 String newSentence = etSentence.getText().toString();
+                String newChinese = etChinese.getText().toString();
                 String newWord1 = etWords[0].getText().toString();
                 String newWord2 = etWords[1].getText().toString();
                 String newWord3 = etWords[2].getText().toString();
                 String newWord4 = etWords[3].getText().toString();
                 String newWord5 = etWords[4].getText().toString();
                 String newWord6 = etWords[5].getText().toString();
+                String newWord7 = etWords[6].getText().toString();
+                String newWord8 = etWords[7].getText().toString();
 
                 Map<String, Object> updates = new HashMap<>();
                 updates.put("name", newName);
                 updates.put("sentence", newSentence);
+                updates.put("chinese", newChinese);
                 updates.put("word1", newWord1);
                 updates.put("word2", newWord2);
                 updates.put("word3", newWord3);
                 updates.put("word4", newWord4);
                 updates.put("word5", newWord5);
                 updates.put("word6", newWord6);
+                updates.put("word7", newWord7);
+                updates.put("word8", newWord8);
+
 
                 // push updated content
                 reference.child(id).updateChildren(updates)

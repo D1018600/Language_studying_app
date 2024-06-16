@@ -24,6 +24,7 @@ public class DesignStageActivity extends AppCompatActivity {
     private Button btnPublish;
     private EditText etName;
     private EditText[] etWords;
+    private EditText etChinese;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +42,16 @@ public class DesignStageActivity extends AppCompatActivity {
         etSentence = findViewById(R.id.et_sentence);
         btnPublish = findViewById(R.id.btn_publish);
         etName = findViewById(R.id.et_stage_name);
+        etChinese = findViewById(R.id.et_chinese);
         etWords = new EditText[]{
                 findViewById(R.id.et_word1),
                 findViewById(R.id.et_word2),
                 findViewById(R.id.et_word3),
                 findViewById(R.id.et_word4),
                 findViewById(R.id.et_word5),
-                findViewById(R.id.et_word6)
+                findViewById(R.id.et_word6),
+                findViewById(R.id.et_word7),
+                findViewById(R.id.et_word8)
         };
 
         View.OnClickListener listener = new View.OnClickListener() {
@@ -61,6 +65,7 @@ public class DesignStageActivity extends AppCompatActivity {
                 // get the input content and store to firebase
                 if(view.getId() == R.id.btn_publish){
                     String name = etName.getText().toString();
+                    String chinese = etChinese.getText().toString();
                     String sentence = etSentence.getText().toString();
                     String word1 = etWords[0].getText().toString();
                     String word2 = etWords[1].getText().toString();
@@ -68,8 +73,10 @@ public class DesignStageActivity extends AppCompatActivity {
                     String word4 = etWords[3].getText().toString();
                     String word5 = etWords[4].getText().toString();
                     String word6 = etWords[5].getText().toString();
+                    String word7 = etWords[6].getText().toString();
+                    String word8 = etWords[7].getText().toString();
                     int code = ThreadLocalRandom.current().nextInt(1, 99999);
-                    addStage(code, name, sentence, word1, word2, word3, word4, word5, word6);
+                    addStage(code, name, sentence, chinese, word1, word2, word3, word4, word5, word6, word7, word8);
                     intent.setClass(DesignStageActivity.this, DesignRecordActivity.class);
                 }
                 DesignStageActivity.this.startActivity(intent);
@@ -79,9 +86,9 @@ public class DesignStageActivity extends AppCompatActivity {
         btnPublish.setOnClickListener(listener);
     }
 
-    private void addStage(int code, String name, String sentence, String word1, String word2, String word3, String word4, String word5, String word6) {
+    private void addStage(int code, String name, String sentence, String chinese, String word1, String word2, String word3, String word4, String word5, String word6, String word7, String word8) {
         // add content to firebase
-        Stage stage = new Stage(code, name, sentence, word1, word2, word3, word4, word5, word6);
+        Stage stage = new Stage(code, name, sentence, chinese,word1, word2, word3, word4, word5, word6, word7, word8);
         FirebaseDatabase database =FirebaseDatabase.getInstance();
         DatabaseReference reference =database.getReference("stages");
         reference.push().setValue(stage);

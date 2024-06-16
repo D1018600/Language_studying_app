@@ -48,98 +48,152 @@
 
     <EditText
         android:id="@+id/et_name_edit_stage"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="100dp"
         android:ems="10"
+        android:hint="Stage name"
         android:inputType="text"
-        android:text="Name"
         app:layout_constraintEnd_toStartOf="@+id/btn_submit_edit_stage"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/btn_return_edit_stage"
-        app:layout_constraintTop_toTopOf="@+id/notification_background" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_sentence_edit_stage"
-        android:layout_width="wrap_content"
+        android:id="@+id/et_chinese_edit"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="100dp"
         android:ems="10"
+        android:hint="Chinese description"
         android:inputType="text"
-        android:text="sentence"
-        app:layout_constraintEnd_toEndOf="@+id/et_name_edit_stage"
-        app:layout_constraintStart_toStartOf="@+id/et_name_edit_stage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_name_edit_stage" />
 
     <EditText
-        android:id="@+id/et_2_edit_stage"
-        android:layout_width="wrap_content"
+        android:id="@+id/et_sentence_edit_stage"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Correct answer in English"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/et_chinese_edit"
+        app:layout_constraintStart_toStartOf="@+id/et_chinese_edit"
+        app:layout_constraintTop_toBottomOf="@+id/et_chinese_edit" />
+
+    <EditText
+        android:id="@+id/et_1_edit_stage"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="enter word"
         android:inputType="text"
-        android:text="2"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_sentence_edit_stage" />
 
     <EditText
-        android:id="@+id/et_1_edit_stage"
-        android:layout_width="wrap_content"
+        android:id="@+id/et_2_edit_stage"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
+        android:hint="enter word"
         android:inputType="text"
-        android:text="1"
-        app:layout_constraintBottom_toBottomOf="@+id/et_2_edit_stage"
-        app:layout_constraintEnd_toStartOf="@+id/et_2_edit_stage"
-        app:layout_constraintTop_toTopOf="@+id/et_2_edit_stage" />
+        app:layout_constraintBottom_toBottomOf="@+id/et_1_edit_stage"
+        app:layout_constraintStart_toEndOf="@+id/et_1_edit_stage"
+        app:layout_constraintTop_toTopOf="@+id/et_1_edit_stage"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible" />
 
     <EditText
         android:id="@+id/et_3_edit_stage"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
+        android:hint="enter word"
         android:inputType="text"
-        android:text="3"
         app:layout_constraintBottom_toBottomOf="@+id/et_2_edit_stage"
         app:layout_constraintStart_toEndOf="@+id/et_2_edit_stage"
-        app:layout_constraintTop_toTopOf="@+id/et_2_edit_stage" />
-
-    <EditText
-        android:id="@+id/et_5_edit_stage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_2_edit_stage" />
+        app:layout_constraintTop_toTopOf="@+id/et_2_edit_stage"
+        tools:visibility="visible" />
 
     <EditText
         android:id="@+id/et_4_edit_stage"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="enter word"
         android:inputType="text"
-        android:text="4"
-        app:layout_constraintBottom_toBottomOf="@+id/et_5_edit_stage"
-        app:layout_constraintEnd_toStartOf="@+id/et_5_edit_stage"
-        app:layout_constraintTop_toTopOf="@+id/et_5_edit_stage" />
+        app:layout_constraintBottom_toBottomOf="@+id/et_3_edit_stage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et_3_edit_stage"
+        app:layout_constraintTop_toTopOf="@+id/et_3_edit_stage"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/et_5_edit_stage"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="enter word"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/et_1_edit_stage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_1_edit_stage"
+        app:layout_constraintTop_toBottomOf="@+id/et_1_edit_stage"
+        tools:visibility="visible" />
 
     <EditText
         android:id="@+id/et_6_edit_stage"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
+        android:hint="enter word"
         android:inputType="text"
-        android:text="6"
         app:layout_constraintBottom_toBottomOf="@+id/et_5_edit_stage"
         app:layout_constraintStart_toEndOf="@+id/et_5_edit_stage"
-        app:layout_constraintTop_toTopOf="@+id/et_5_edit_stage" />
+        app:layout_constraintTop_toTopOf="@+id/et_5_edit_stage"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/et_7_edit_stage"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="enter word"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/et_6_edit_stage"
+        app:layout_constraintStart_toEndOf="@+id/et_6_edit_stage"
+        app:layout_constraintTop_toTopOf="@+id/et_6_edit_stage"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/et_8_edit_stage"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="enter word"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/et_7_edit_stage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et_7_edit_stage"
+        app:layout_constraintTop_toTopOf="@+id/et_7_edit_stage"
+        tools:visibility="visible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
