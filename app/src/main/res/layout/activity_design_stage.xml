@@ -17,6 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btn_return_design_stage"
         android:layout_width="wrap_content"
@@ -25,7 +26,7 @@
         android:layout_marginTop="16dp"
         android:backgroundTint="#253769"
         android:fontFamily="@font/lifun_font"
-        android:text="上一頁"
+        android:text="Back"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +39,7 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="#253769"
         android:fontFamily="@font/lifun_font"
-        android:text="發布"
+        android:text="Publish"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
