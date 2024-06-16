@@ -15,8 +15,38 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/et_word6"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="enter word"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/et_word5"
+        app:layout_constraintStart_toEndOf="@+id/et_word5"
+        app:layout_constraintTop_toTopOf="@+id/et_word5"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/et_word8"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="enter word"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/et_word7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et_word7"
+        app:layout_constraintTop_toTopOf="@+id/et_word7"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/btn_return_design_stage"
@@ -48,103 +78,123 @@
 
     <EditText
         android:id="@+id/et_sentence"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="ex: today is a sunny day"
+        android:hint="Correct answer in English"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@+id/et_stage_name"
-        app:layout_constraintStart_toStartOf="@+id/et_stage_name"
-        app:layout_constraintTop_toBottomOf="@+id/et_stage_name" />
+        app:layout_constraintEnd_toEndOf="@+id/et_chinese"
+        app:layout_constraintStart_toStartOf="@+id/et_chinese"
+        app:layout_constraintTop_toBottomOf="@+id/et_chinese" />
 
     <EditText
-        android:id="@+id/et_2"
-        android:layout_width="wrap_content"
+        android:id="@+id/et_word3"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="enter word"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_sentence"
-        tools:visibility="visible" />
-
-    <EditText
-        android:id="@+id/et_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="enter word"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/et_2"
-        app:layout_constraintStart_toEndOf="@+id/et_2"
-        app:layout_constraintTop_toTopOf="@+id/et_2"
+        app:layout_constraintBottom_toBottomOf="@+id/et_word2"
+        app:layout_constraintStart_toEndOf="@+id/et_word2"
+        app:layout_constraintTop_toTopOf="@+id/et_word2"
         tools:visibility="visible" />
 
     <EditText
-        android:id="@+id/et_5"
-        android:layout_width="wrap_content"
+        android:id="@+id/et_word5"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="enter word"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@+id/et_2"
-        app:layout_constraintStart_toStartOf="@+id/et_2"
-        app:layout_constraintTop_toBottomOf="@+id/et_2"
+        app:layout_constraintEnd_toEndOf="@+id/et_word1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_word1"
+        app:layout_constraintTop_toBottomOf="@+id/et_word1"
         tools:visibility="visible" />
 
     <EditText
-        android:id="@+id/et_1"
-        android:layout_width="wrap_content"
+        android:id="@+id/et_word2"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="enter word"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/et_word1"
+        app:layout_constraintStart_toEndOf="@+id/et_word1"
+        app:layout_constraintTop_toTopOf="@+id/et_word1"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/et_word4"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="enter word"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/et_2"
-        app:layout_constraintEnd_toStartOf="@+id/et_2"
-        app:layout_constraintTop_toTopOf="@+id/et_2" />
-
-    <EditText
-        android:id="@+id/et_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="enter word"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/et_5"
-        app:layout_constraintEnd_toStartOf="@+id/et_5"
-        app:layout_constraintTop_toTopOf="@+id/et_5"
+        app:layout_constraintBottom_toBottomOf="@+id/et_word3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et_word3"
+        app:layout_constraintTop_toTopOf="@+id/et_word3"
         tools:visibility="visible" />
 
     <EditText
-        android:id="@+id/et_6"
-        android:layout_width="wrap_content"
+        android:id="@+id/et_word1"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="enter word"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/et_5"
-        app:layout_constraintStart_toEndOf="@+id/et_5"
-        app:layout_constraintTop_toTopOf="@+id/et_5"
-        tools:visibility="visible" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_sentence" />
 
     <EditText
         android:id="@+id/et_stage_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="100dp"
         android:ems="10"
-        android:hint="enter stage name"
+        android:hint="Stage name"
         android:inputType="text"
         app:layout_constraintEnd_toStartOf="@+id/btn_publish"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/btn_return_design_stage"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_chinese"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="100dp"
+        android:ems="10"
+        android:hint="Chinese description"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_stage_name" />
+
+    <EditText
+        android:id="@+id/et_word7"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="enter word"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/et_word6"
+        app:layout_constraintStart_toEndOf="@+id/et_word6"
+        app:layout_constraintTop_toTopOf="@+id/et_word6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,11 +11,14 @@ public class Stage {
     private String word4;
     private String word5;
     private String word6;
+    private String word7;
+    private String word8;
+    private String chinese;
     public Stage(){
 
     }
 
-    public Stage(int code, String name, String sentence, String word1, String word2, String word3, String word4, String word5, String word6) {
+    public Stage(int code, String name, String sentence,String chinese, String word1, String word2, String word3, String word4, String word5, String word6, String word7, String word8) {
         this.name = name;
         this.sentence = sentence;
         this.word1 = word1;
@@ -25,6 +28,9 @@ public class Stage {
         this.word5 = word5;
         this.word6 = word6;
         this.code = code;
+        this.word7 = word7;
+        this.word8 = word8;
+        this.chinese = chinese;
     }
 
     // Getter and Setter methods
@@ -92,8 +98,43 @@ public class Stage {
         this.word6 = word6;
     }
 
-    public int getCode(){return code;}
-    public void setCode(){this.code = code;}
-    public String getId(){return id;}
-    public void setId(){this.code = code;}
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getWord7() {
+        return word7;
+    }
+
+    public void setWord7(String word7) {
+        this.word7 = word7;
+    }
+
+    public String getWord8() {
+        return word8;
+    }
+
+    public void setWord8(String word8) {
+        this.word8 = word8;
+    }
+
+    public String getChinese() {
+        return chinese;
+    }
+
+    public void setChinese(String chinese) {
+        this.chinese = chinese;
+    }
 }
