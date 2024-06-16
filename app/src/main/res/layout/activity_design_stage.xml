@@ -20,6 +20,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_return_design_stage"
+        app:layout_constraintEnd_toEndOf="@+id/btn_return_design_stage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_return_design_stage"
+        app:layout_constraintTop_toTopOf="@+id/btn_return_design_stage"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_back" />
+
     <EditText
         android:id="@+id/et_word6"
         android:layout_width="170dp"
@@ -50,12 +62,12 @@
 
     <Button
         android:id="@+id/btn_return_design_stage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="49dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:background="#00FFFFFF"
         android:fontFamily="@font/lifun_font"
-        android:text="Back"
         android:textStyle="bold"
         app:backgroundTint="#253769"
         app:cornerRadius="0dp"
