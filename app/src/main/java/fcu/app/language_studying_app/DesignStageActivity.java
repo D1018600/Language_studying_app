@@ -75,7 +75,7 @@ public class DesignStageActivity extends AppCompatActivity {
                     String word6 = etWords[5].getText().toString();
                     String word7 = etWords[6].getText().toString();
                     String word8 = etWords[7].getText().toString();
-                    int code = ThreadLocalRandom.current().nextInt(1, 99999);
+                    int code = ThreadLocalRandom.current().nextInt(1, 999999);
                     addStage(code, name, sentence, chinese, word1, word2, word3, word4, word5, word6, word7, word8);
                     intent.setClass(DesignStageActivity.this, DesignRecordActivity.class);
                 }

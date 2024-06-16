@@ -1,6 +1,7 @@
 package fcu.app.language_studying_app;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -27,7 +28,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.opencsv.CSVWriter;
 
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -199,6 +203,11 @@ public class WorldActivity extends AppCompatActivity {
                             stage.getWord7() + " " +
                             stage.getWord8();
 
+                    String name = stage.getName();
+                    String chinese = stage.getChinese();
+                    String sentence = stage.getSentence();
+                    String csvString = "1" + "q1," + sentence + "," + chinese + "a1," + stringBuilder;
+
                     Bundle bundle = new Bundle();
                     bundle.putString("chQuestion", stage.getChinese());
                     bundle.putString("enQuestion", stage.getSentence());
@@ -218,10 +227,7 @@ public class WorldActivity extends AppCompatActivity {
               Toast.makeText(WorldActivity.this, "Wrong code, please retry again.", Toast.LENGTH_SHORT).show();
             }
           });
-
         }
-        // correct room code
-        // or not
       }
     });
 
