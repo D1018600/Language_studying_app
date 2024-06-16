@@ -26,7 +26,7 @@
         android:textAlignment="center"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:backgroundTint="#253769"
+        app:backgroundTint="#03A9F4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -43,7 +43,7 @@
         android:textAlignment="center"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:backgroundTint="#253769"
+        app:backgroundTint="#03A9F4"
         app:layout_constraintBottom_toBottomOf="@+id/btn_learn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btn_learn" />

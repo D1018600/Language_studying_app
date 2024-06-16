@@ -28,7 +28,7 @@ public class WorldToGameLoading extends AppCompatActivity {
   private ArrayList<String> enQuestion = new ArrayList<String>();
   private ArrayList<String> answer = new ArrayList<String>();
   private int numOfStage;
-  private int curStage = 0;
+  public static int curStage = 0;
   public static int time = 1;
   public static int miss = 0;
 
@@ -80,11 +80,11 @@ public class WorldToGameLoading extends AppCompatActivity {
   protected void onResume() {
     super.onResume();
     if (returnHome) {
-      startActivity(new Intent().setClass(WorldToGameLoading.this, WorldActivity.class));
       time = 1;
       miss = 0;
       curStage = 0;
       returnHome = false;
+      startActivity(new Intent().setClass(WorldToGameLoading.this, WorldActivity.class));
       finish();
 
     } else if (restart) {
@@ -92,7 +92,6 @@ public class WorldToGameLoading extends AppCompatActivity {
       miss = 0;
       curStage = 0;
       restart = false;
-
     }
 
     if (curStage == numOfStage) {
@@ -117,8 +116,6 @@ public class WorldToGameLoading extends AppCompatActivity {
 
       intentToGame.setClass(WorldToGameLoading.this, GameStage.class);
       startActivity(intentToGame);
-
-      curStage++;
     }
   }
 }

@@ -50,7 +50,7 @@
   <TextView
       android:id="@+id/tv_ch4"
       android:layout_width="170dp"
-      android:layout_height="30dp"
+      android:layout_height="40dp"
       android:layout_marginStart="576dp"
       android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
@@ -66,15 +66,14 @@
   <TextView
       android:id="@+id/tv_ch1"
       android:layout_width="170dp"
-      android:layout_height="30dp"
+      android:layout_height="40dp"
       android:layout_marginStart="48dp"
-      android:layout_marginTop="252dp"
+      android:layout_marginTop="228dp"
       android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
       android:text="answer1"
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-      android:textColor="#000000"
       android:textStyle="bold"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
@@ -82,7 +81,7 @@
   <TextView
       android:id="@+id/tv_ch2"
       android:layout_width="170dp"
-      android:layout_height="30dp"
+      android:layout_height="40dp"
       android:layout_marginStart="224dp"
       android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
@@ -98,7 +97,7 @@
   <TextView
       android:id="@+id/tv_ch7"
       android:layout_width="170dp"
-      android:layout_height="30dp"
+      android:layout_height="40dp"
       android:layout_marginStart="400dp"
       android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
@@ -114,7 +113,7 @@
   <TextView
       android:id="@+id/tv_ch5"
       android:layout_width="170dp"
-      android:layout_height="30dp"
+      android:layout_height="40dp"
       android:layout_marginTop="24dp"
       android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
@@ -128,7 +127,7 @@
   <TextView
       android:id="@+id/tv_ch6"
       android:layout_width="170dp"
-      android:layout_height="30dp"
+      android:layout_height="40dp"
       android:layout_marginStart="224dp"
       android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
@@ -144,7 +143,7 @@
   <TextView
       android:id="@+id/tv_ch3"
       android:layout_width="170dp"
-      android:layout_height="30dp"
+      android:layout_height="40dp"
       android:layout_marginStart="400dp"
       android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
@@ -160,7 +159,7 @@
   <TextView
       android:id="@+id/tv_ch8"
       android:layout_width="170dp"
-      android:layout_height="30dp"
+      android:layout_height="40dp"
       android:layout_marginStart="576dp"
       android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"

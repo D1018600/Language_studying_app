@@ -35,13 +35,11 @@ public class PauseScreen extends AppCompatActivity {
       public void onClick(View v) {
         if (v.getId() == R.id.btn_pause_retry) {
           WorldToGameLoading.restart = true;
-          startActivity(new Intent().setClass(PauseScreen.this, WorldToGameLoading.class));
           finish();
         } else if (v.getId() == R.id.btn_pause_continue) {
           finish();
         } else if (v.getId() == R.id.btn_pause_home) {
           WorldToGameLoading.returnHome = true;
-          startActivity(new Intent().setClass(PauseScreen.this, WorldActivity.class));
           finish();
         }
       }

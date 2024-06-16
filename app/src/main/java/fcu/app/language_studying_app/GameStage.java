@@ -80,6 +80,7 @@ public class GameStage extends AppCompatActivity {
     btnNext.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
+        WorldToGameLoading.curStage++;
         finish();
       }
     });
@@ -97,9 +98,16 @@ public class GameStage extends AppCompatActivity {
   @Override
   protected void onResume() {
     super.onResume();
-    if (WorldToGameLoading.restart || WorldToGameLoading.returnHome) {
+    if (WorldToGameLoading.returnHome) {
       finish();
+      startActivity(new Intent().setClass(GameStage.this, WorldActivity.class));
+
+    } else if (WorldToGameLoading.restart) {
+      finish();
+      startActivity(new Intent().setClass(GameStage.this, WorldToGameLoading.class));
+
     } else {
+      // continue after pause
       runStop = false;
       r = new Runnable() {
         @Override

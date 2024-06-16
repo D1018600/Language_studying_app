@@ -88,7 +88,7 @@ public class DesignStageActivity extends AppCompatActivity {
 
     private void addStage(int code, String name, String sentence, String chinese, String word1, String word2, String word3, String word4, String word5, String word6, String word7, String word8) {
         // add content to firebase
-        Stage stage = new Stage(code, name, sentence, chinese,word1, word2, word3, word4, word5, word6, word7, word8);
+        Stage stage = new Stage(code, name, sentence, chinese, word1, word2, word3, word4, word5, word6, word7, word8);
         FirebaseDatabase database =FirebaseDatabase.getInstance();
         DatabaseReference reference =database.getReference("stages");
         reference.push().setValue(stage);
