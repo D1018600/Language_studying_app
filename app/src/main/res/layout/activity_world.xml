@@ -46,7 +46,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/tv_ep1"
                 app:layout_constraintStart_toStartOf="@+id/tv_ep1"
                 app:layout_constraintTop_toBottomOf="@+id/tv_ep1"
-                app:srcCompat="@drawable/setting" />
+                app:srcCompat="@drawable/apple" />
 
             <RatingBar
                 android:id="@+id/rb_ep1"
@@ -86,7 +86,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/tv_ep2"
                 app:layout_constraintStart_toStartOf="@+id/tv_ep2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_ep2"
-                app:srcCompat="@drawable/setting" />
+                app:srcCompat="@drawable/animal" />
 
             <RatingBar
                 android:id="@+id/rb_ep2"
@@ -122,7 +122,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/tv_ep3"
                 app:layout_constraintStart_toStartOf="@+id/tv_ep3"
                 app:layout_constraintTop_toBottomOf="@+id/tv_ep3"
-                app:srcCompat="@drawable/setting" />
+                app:srcCompat="@drawable/color" />
 
             <RatingBar
                 android:id="@+id/rb_ep3"
@@ -158,7 +158,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/tv_ep4"
                 app:layout_constraintStart_toStartOf="@+id/tv_ep4"
                 app:layout_constraintTop_toBottomOf="@+id/tv_ep4"
-                app:srcCompat="@drawable/setting" />
+                app:srcCompat="@drawable/food" />
 
             <RatingBar
                 android:id="@+id/rb_ep4"
@@ -196,7 +196,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/tv_ep5"
                 app:layout_constraintStart_toStartOf="@+id/tv_ep5"
                 app:layout_constraintTop_toBottomOf="@+id/tv_ep5"
-                app:srcCompat="@drawable/setting" />
+                app:srcCompat="@drawable/weather" />
 
             <RatingBar
                 android:id="@+id/rb_ep5"
