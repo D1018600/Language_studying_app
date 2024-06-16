@@ -77,7 +77,7 @@ public class DesignRecordActivity extends AppCompatActivity {
         lvStageContainer.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // fetch the content from firebase
+                // fetch the content from listView
                 Map<String, String> item = (Map<String, String>) parent.getItemAtPosition(position);
                 String identifier = item.get("ID"); // Get the identifier
                 String name = item.get("Name");
@@ -128,7 +128,7 @@ public class DesignRecordActivity extends AppCompatActivity {
                 for(DataSnapshot ds : snapshot.getChildren()){
                     String id = ds.getKey();
                     Stage stage = ds.getValue(Stage.class);
-
+                    // fetch the data from firebase
                     Map<String, String> map = new HashMap<>();
                     map.put("ID", id);
                     map.put("Name", stage.getName());
