@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D6F1D6"
+    android:background="#FFFFFF"
     tools:context=".GameStage">
   <ImageView
       android:id="@+id/notification_background"
@@ -14,27 +14,13 @@
       android:scaleType="centerCrop"
       android:background="@drawable/background"/>
 
-  <Button
-      android:id="@+id/btn_game_stop"
-      android:layout_width="87dp"
-      android:layout_height="48dp"
-      android:layout_marginStart="16dp"
-      android:layout_marginTop="16dp"
-      android:fontFamily="@font/lifun_font"
-      android:text="Back"
-      android:textStyle="bold"
-      app:backgroundTint="#253769"
-      app:cornerRadius="0dp"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
-
   <TextView
       android:id="@+id/tv_ch_q"
       android:layout_width="743dp"
-      android:layout_height="wrap_content"
+      android:layout_height="45dp"
       android:layout_marginStart="32dp"
       android:layout_marginTop="88dp"
-      android:background="#FFFFFF"
+      android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
       android:text="中文題目"
       android:textAlignment="center"
@@ -48,10 +34,13 @@
       android:layout_width="743dp"
       android:layout_height="51dp"
       android:layout_marginTop="16dp"
-      android:background="#FFFFFF"
+      android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
-      android:singleLine="false"
-      android:textAlignment="center"
+      android:gravity="center"
+      android:maxLines="2"
+      android:paddingStart="100dp"
+      android:paddingEnd="100dp"
+      android:textAlignment="gravity"
       android:textAppearance="@style/TextAppearance.AppCompat.Large"
       android:textStyle="bold"
       app:circularflow_radiusInDP="36dp"
@@ -61,9 +50,9 @@
   <TextView
       android:id="@+id/tv_ch4"
       android:layout_width="170dp"
-      android:layout_height="wrap_content"
+      android:layout_height="30dp"
       android:layout_marginStart="576dp"
-      android:background="#00FFFFFF"
+      android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
       android:text="answer4"
       android:textAlignment="center"
@@ -77,14 +66,15 @@
   <TextView
       android:id="@+id/tv_ch1"
       android:layout_width="170dp"
-      android:layout_height="wrap_content"
+      android:layout_height="30dp"
       android:layout_marginStart="48dp"
       android:layout_marginTop="252dp"
-      android:background="#00FFFFFF"
+      android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
       android:text="answer1"
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      android:textColor="#000000"
       android:textStyle="bold"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
@@ -92,9 +82,9 @@
   <TextView
       android:id="@+id/tv_ch2"
       android:layout_width="170dp"
-      android:layout_height="wrap_content"
+      android:layout_height="30dp"
       android:layout_marginStart="224dp"
-      android:background="#00FFFFFF"
+      android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
       android:text="answer2"
       android:textAlignment="center"
@@ -108,9 +98,9 @@
   <TextView
       android:id="@+id/tv_ch7"
       android:layout_width="170dp"
-      android:layout_height="wrap_content"
+      android:layout_height="30dp"
       android:layout_marginStart="400dp"
-      android:background="#00FFFFFF"
+      android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
       android:text="answer7"
       android:textAlignment="center"
@@ -124,9 +114,9 @@
   <TextView
       android:id="@+id/tv_ch5"
       android:layout_width="170dp"
-      android:layout_height="wrap_content"
+      android:layout_height="30dp"
       android:layout_marginTop="24dp"
-      android:background="#00FFFFFF"
+      android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
       android:text="answer5"
       android:textAlignment="center"
@@ -138,9 +128,9 @@
   <TextView
       android:id="@+id/tv_ch6"
       android:layout_width="170dp"
-      android:layout_height="wrap_content"
+      android:layout_height="30dp"
       android:layout_marginStart="224dp"
-      android:background="#00FFFFFF"
+      android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
       android:text="answer6"
       android:textAlignment="center"
@@ -154,9 +144,9 @@
   <TextView
       android:id="@+id/tv_ch3"
       android:layout_width="170dp"
-      android:layout_height="wrap_content"
+      android:layout_height="30dp"
       android:layout_marginStart="400dp"
-      android:background="#00FFFFFF"
+      android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
       android:text="answer3"
       android:textAlignment="center"
@@ -170,9 +160,9 @@
   <TextView
       android:id="@+id/tv_ch8"
       android:layout_width="170dp"
-      android:layout_height="wrap_content"
+      android:layout_height="30dp"
       android:layout_marginStart="576dp"
-      android:background="#00FFFFFF"
+      android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
       android:text="answer8"
       android:textAlignment="center"
@@ -193,7 +183,7 @@
       android:fontFamily="@font/lifun_font"
       android:text="Next stage"
       android:textStyle="bold"
-      app:backgroundTint="#253769"
+      app:backgroundTint="#4CAF50"
       app:cornerRadius="0dp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
@@ -206,6 +196,30 @@
       android:textAppearance="@style/TextAppearance.AppCompat.Medium"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.499"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <ImageView
+      android:id="@+id/imageView7"
+      android:layout_width="64dp"
+      android:layout_height="64dp"
+      android:scaleType="centerCrop"
+      app:layout_constraintBottom_toBottomOf="@+id/btn_game_stop"
+      app:layout_constraintEnd_toEndOf="@+id/btn_game_stop"
+      app:layout_constraintStart_toStartOf="@+id/btn_game_stop"
+      app:layout_constraintTop_toTopOf="@+id/btn_game_stop"
+      app:srcCompat="@drawable/icon_stop" />
+
+  <Button
+      android:id="@+id/btn_game_stop"
+      android:layout_width="64dp"
+      android:layout_height="64dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:fontFamily="@font/lifun_font"
+      android:textStyle="bold"
+      app:backgroundTint="#00FFFFFF"
+      app:cornerRadius="0dp"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 

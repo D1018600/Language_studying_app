@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="72dp"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="72dp"
                 android:fontFamily="@font/lifun_font"
                 android:text="Episode 1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -214,32 +214,40 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </HorizontalScrollView>
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btn_join_room"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="#253769"
+        android:background="@drawable/world_btn_style"
         android:fontFamily="@font/lifun_font"
         android:text="Join stage"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
-        app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+        app:layout_constraintEnd_toEndOf="@+id/btn_back"
+        app:layout_constraintStart_toStartOf="@+id/btn_back"
+        app:layout_constraintTop_toTopOf="@+id/btn_back"
+        app:srcCompat="@drawable/icon_back" />
+
     <Button
         android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:background="#00FFFFFF"
         android:backgroundTint="#253769"
         android:fontFamily="@font/lifun_font"
-        android:text="Back"
         android:textStyle="bold"
-        app:backgroundTint="#253769"
         app:cornerRadius="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
