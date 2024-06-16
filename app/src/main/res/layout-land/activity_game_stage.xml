@@ -48,22 +48,6 @@
       app:layout_constraintTop_toBottomOf="@+id/tv_ch_q" />
 
   <TextView
-      android:id="@+id/tv_ch4"
-      android:layout_width="170dp"
-      android:layout_height="40dp"
-      android:layout_marginStart="576dp"
-      android:background="@drawable/game_et_style"
-      android:fontFamily="@font/lifun_font"
-      android:text="answer4"
-      android:textAlignment="center"
-      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-      android:textStyle="bold"
-      app:layout_constraintBottom_toBottomOf="@+id/tv_ch3"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/tv_ch3"
-      app:layout_constraintVertical_bias="0.0" />
-
-  <TextView
       android:id="@+id/tv_ch1"
       android:layout_width="170dp"
       android:layout_height="40dp"
@@ -95,19 +79,35 @@
       app:layout_constraintVertical_bias="0.0" />
 
   <TextView
-      android:id="@+id/tv_ch7"
+      android:id="@+id/tv_ch3"
       android:layout_width="170dp"
       android:layout_height="40dp"
       android:layout_marginStart="400dp"
       android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
-      android:text="answer7"
+      android:text="answer3"
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Medium"
       android:textStyle="bold"
-      app:layout_constraintBottom_toBottomOf="@+id/tv_ch6"
+      app:layout_constraintBottom_toBottomOf="@+id/tv_ch2"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/tv_ch6"
+      app:layout_constraintTop_toTopOf="@+id/tv_ch2"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <TextView
+      android:id="@+id/tv_ch4"
+      android:layout_width="170dp"
+      android:layout_height="40dp"
+      android:layout_marginStart="576dp"
+      android:background="@drawable/game_et_style"
+      android:fontFamily="@font/lifun_font"
+      android:text="answer4"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="@+id/tv_ch3"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tv_ch3"
       app:layout_constraintVertical_bias="0.0" />
 
   <TextView
@@ -141,19 +141,19 @@
       app:layout_constraintVertical_bias="0.0" />
 
   <TextView
-      android:id="@+id/tv_ch3"
+      android:id="@+id/tv_ch7"
       android:layout_width="170dp"
       android:layout_height="40dp"
       android:layout_marginStart="400dp"
       android:background="@drawable/game_et_style"
       android:fontFamily="@font/lifun_font"
-      android:text="answer3"
+      android:text="answer7"
       android:textAlignment="center"
       android:textAppearance="@style/TextAppearance.AppCompat.Medium"
       android:textStyle="bold"
-      app:layout_constraintBottom_toBottomOf="@+id/tv_ch2"
+      app:layout_constraintBottom_toBottomOf="@+id/tv_ch6"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/tv_ch2"
+      app:layout_constraintTop_toTopOf="@+id/tv_ch6"
       app:layout_constraintVertical_bias="0.0" />
 
   <TextView

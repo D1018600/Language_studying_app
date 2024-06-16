@@ -85,7 +85,7 @@ public class WorldToGameLoading extends AppCompatActivity {
       curStage = 0;
       returnHome = false;
       startActivity(new Intent().setClass(WorldToGameLoading.this, WorldActivity.class));
-      finish();
+      onDestroy();
 
     } else if (restart) {
       time = 1;

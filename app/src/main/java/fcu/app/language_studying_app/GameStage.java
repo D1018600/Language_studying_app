@@ -31,6 +31,7 @@ public class GameStage extends AppCompatActivity {
   private String[] ansSen;
   private int cnt = 0;
   private boolean runStop = false;
+  private boolean initPositionSet = true;
 
   private float dx, dy, initx, inity;
 
@@ -99,12 +100,12 @@ public class GameStage extends AppCompatActivity {
   protected void onResume() {
     super.onResume();
     if (WorldToGameLoading.returnHome) {
-      finish();
       startActivity(new Intent().setClass(GameStage.this, WorldActivity.class));
+      onDestroy();
 
     } else if (WorldToGameLoading.restart) {
-      finish();
       startActivity(new Intent().setClass(GameStage.this, WorldToGameLoading.class));
+      onDestroy();
 
     } else {
       // continue after pause
@@ -165,10 +166,14 @@ public class GameStage extends AppCompatActivity {
       @SuppressLint("ClickableViewAccessibility")
       @Override
       public boolean onTouch(View v, MotionEvent event) {
+        initPositionSet = true;
         switch (event.getAction()) {
           case MotionEvent.ACTION_DOWN:
-            initx = v.getX();
-            inity = v.getY();
+            if (initPositionSet) {
+              initx = v.getX();
+              inity = v.getY();
+              initPositionSet = false;
+            }
             dx = v.getX() - event.getRawX();
             dy = v.getY() - event.getRawY();
             break;
@@ -180,6 +185,7 @@ public class GameStage extends AppCompatActivity {
                 .start();
             break;
           case MotionEvent.ACTION_UP:
+
             Rect rect1 = new Rect();
             Rect rect2 = new Rect();
             v.getHitRect(rect1);
