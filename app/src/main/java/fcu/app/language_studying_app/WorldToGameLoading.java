@@ -52,7 +52,9 @@ public class WorldToGameLoading extends AppCompatActivity {
     });
 
     Bundle bundle = this.getIntent().getExtras();
-    mode = bundle.getInt("MODE");
+    if (bundle != null) {
+      mode = bundle.getInt("MODE");
+    }
 
     if (mode == 0) {
       stage = bundle.getString("STAGE");
@@ -86,22 +88,22 @@ public class WorldToGameLoading extends AppCompatActivity {
   @Override
   protected void onResume() {
     super.onResume();
-    if (returnHome) {
-      time = 1;
-      miss = 0;
-      curStage = 0;
-      returnHome = false;
-      startActivity(new Intent().setClass(WorldToGameLoading.this, WorldActivity.class));
-      onDestroy();
-
-    } else if (restart) {
-      time = 1;
+    if (restart) {
+      time = 0;
       miss = 0;
       curStage = 0;
       restart = false;
     }
 
-    if (curStage == numOfStage) {
+    if (returnHome) {
+      time = 0;
+      miss = 0;
+      curStage = 0;
+      returnHome = false;
+      startActivity(new Intent().setClass(WorldToGameLoading.this, WorldActivity.class));
+      //onDestroy();
+
+    } else if (curStage == numOfStage) {
       Bundle bundle = new Bundle();
       bundle.putInt("TIME", time);
       bundle.putInt("MISS", miss);
@@ -123,6 +125,14 @@ public class WorldToGameLoading extends AppCompatActivity {
 
       intentToGame.setClass(WorldToGameLoading.this, GameStage.class);
       startActivity(intentToGame);
+    }
+  }
+
+  @Override
+  protected void onPause() {
+    super.onPause();
+    if (returnHome) {
+      onDestroy();
     }
   }
 }

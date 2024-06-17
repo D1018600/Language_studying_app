@@ -19,6 +19,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import org.apache.commons.lang3.ObjectUtils;
+
 import java.util.ArrayList;
 
 public class GameStage extends AppCompatActivity {
@@ -62,9 +64,11 @@ public class GameStage extends AppCompatActivity {
     });
 
     Bundle bundle = this.getIntent().getExtras();
-    chQuestion = bundle.getString("chQuestion");
-    enQuestion = bundle.getString("enQuestion").split(" ");
-    ansSen = bundle.getString("answer").split(" ");
+    if (bundle != null) {
+      chQuestion = bundle.getString("chQuestion");
+      enQuestion = bundle.getString("enQuestion").split(" ");
+      ansSen = bundle.getString("answer").split(" ");
+    }
 
     findIDInit();
     stageInit();
@@ -100,12 +104,14 @@ public class GameStage extends AppCompatActivity {
   protected void onResume() {
     super.onResume();
     if (WorldToGameLoading.returnHome) {
-      startActivity(new Intent().setClass(GameStage.this, WorldActivity.class));
-      onDestroy();
+      finish();
+      //startActivity(new Intent().setClass(GameStage.this, WorldActivity.class));
+      //onDestroy();
 
     } else if (WorldToGameLoading.restart) {
-      startActivity(new Intent().setClass(GameStage.this, WorldToGameLoading.class));
-      onDestroy();
+      finish();
+      //startActivity(new Intent().setClass(GameStage.this, WorldToGameLoading.class));
+      //onDestroy();
 
     } else {
       // continue after pause
@@ -124,8 +130,8 @@ public class GameStage extends AppCompatActivity {
   }
 
   @Override
-  protected void onStop() {
-    super.onStop();
+  protected void onPause() {
+    super.onPause();
     runStop = true;
   }
 
@@ -166,7 +172,7 @@ public class GameStage extends AppCompatActivity {
       @SuppressLint("ClickableViewAccessibility")
       @Override
       public boolean onTouch(View v, MotionEvent event) {
-        initPositionSet = true;
+
         switch (event.getAction()) {
           case MotionEvent.ACTION_DOWN:
             if (initPositionSet) {
@@ -178,6 +184,7 @@ public class GameStage extends AppCompatActivity {
             dy = v.getY() - event.getRawY();
             break;
           case MotionEvent.ACTION_MOVE:
+            initPositionSet = true;
             v.animate()
                 .x(event.getRawX() + dx)
                 .y(event.getRawY() + dy)
@@ -198,6 +205,7 @@ public class GameStage extends AppCompatActivity {
 
               v.setX(initx);
               v.setY(inity);
+              v.setAlpha(0);
               if (cnt == enQuestion.length) {
                 btnNext.setEnabled(true);
                 btnNext.setAlpha(1);
