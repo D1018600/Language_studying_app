@@ -71,7 +71,6 @@ public class GameStage extends AppCompatActivity {
     }
 
     findIDInit();
-    stageInit();
 
     moveChoice(tvCh1, tvAns1);
     moveChoice(tvCh2, tvAns1);
@@ -103,6 +102,15 @@ public class GameStage extends AppCompatActivity {
   @Override
   protected void onResume() {
     super.onResume();
+
+    Bundle bundle = this.getIntent().getExtras();
+    if (bundle != null) {
+      chQuestion = bundle.getString("chQuestion");
+      enQuestion = bundle.getString("enQuestion").split(" ");
+      ansSen = bundle.getString("answer").split(" ");
+    }
+    stageInit();
+
     if (WorldToGameLoading.returnHome) {
       finish();
       //startActivity(new Intent().setClass(GameStage.this, WorldActivity.class));
